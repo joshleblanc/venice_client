@@ -1,4 +1,4 @@
-# SwaggerClient::ToolCall
+# VeniceClient::ToolCall
 
 ## Properties
 Name | Type | Description | Notes

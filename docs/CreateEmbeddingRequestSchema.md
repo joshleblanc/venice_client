@@ -1,4 +1,4 @@
-# SwaggerClient::CreateEmbeddingRequestSchema
+# VeniceClient::CreateEmbeddingRequestSchema
 
 ## Properties
 Name | Type | Description | Notes

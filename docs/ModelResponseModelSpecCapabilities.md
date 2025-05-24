@@ -1,4 +1,4 @@
-# SwaggerClient::ModelResponseModelSpecCapabilities
+# VeniceClient::ModelResponseModelSpecCapabilities
 
 ## Properties
 Name | Type | Description | Notes

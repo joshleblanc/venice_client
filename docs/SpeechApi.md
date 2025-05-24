@@ -1,4 +1,4 @@
-# SwaggerClient::SpeechApi
+# VeniceClient::SpeechApi
 
 All URIs are relative to *https://api.venice.ai/api/v1*
 
@@ -18,19 +18,19 @@ Converts text to speech using various voice models and formats.
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::SpeechApi.new
+api_instance = VeniceClient::SpeechApi.new
 opts = { 
-  body: SwaggerClient::CreateSpeechRequestSchema.new # CreateSpeechRequestSchema | 
+  body: VeniceClient::CreateSpeechRequestSchema.new # CreateSpeechRequestSchema | 
 }
 
 begin
   #/api/v1/audio/speech
   result = api_instance.create_speech(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling SpeechApi->create_speech: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# SwaggerClient::InlineResponse2007UsageTrailingSevenDays
+# VeniceClient::InlineResponse2007UsageTrailingSevenDays
 
 ## Properties
 Name | Type | Description | Notes

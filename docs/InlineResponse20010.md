@@ -1,4 +1,4 @@
-# SwaggerClient::InlineResponse20010
+# VeniceClient::InlineResponse20010
 
 ## Properties
 Name | Type | Description | Notes

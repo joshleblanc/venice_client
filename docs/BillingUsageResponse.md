@@ -1,4 +1,4 @@
-# SwaggerClient::BillingUsageResponse
+# VeniceClient::BillingUsageResponse
 
 ## Properties
 Name | Type | Description | Notes

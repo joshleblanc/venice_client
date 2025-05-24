@@ -1,4 +1,4 @@
-# SwaggerClient::ApiKeysConsumptionLimit
+# VeniceClient::ApiKeysConsumptionLimit
 
 ## Properties
 Name | Type | Description | Notes

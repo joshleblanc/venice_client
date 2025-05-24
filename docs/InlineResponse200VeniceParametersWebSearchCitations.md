@@ -1,4 +1,4 @@
-# SwaggerClient::InlineResponse200VeniceParametersWebSearchCitations
+# VeniceClient::InlineResponse200VeniceParametersWebSearchCitations
 
 ## Properties
 Name | Type | Description | Notes

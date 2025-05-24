@@ -1,4 +1,4 @@
-# SwaggerClient::ApiKeysGenerateWeb3KeyBody
+# VeniceClient::ApiKeysGenerateWeb3KeyBody
 
 ## Properties
 Name | Type | Description | Notes

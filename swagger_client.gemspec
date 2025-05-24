@@ -16,7 +16,7 @@ require "swagger_client/version"
 
 Gem::Specification.new do |s|
   s.name = "swagger_client"
-  s.version = SwaggerClient::VERSION
+  s.version = VeniceClient::VERSION
   s.platform = Gem::Platform::RUBY
   s.authors = ["Swagger-Codegen"]
   s.email = [""]

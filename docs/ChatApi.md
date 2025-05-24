@@ -1,4 +1,4 @@
-# SwaggerClient::ChatApi
+# VeniceClient::ChatApi
 
 All URIs are relative to *https://api.venice.ai/api/v1*
 
@@ -18,12 +18,12 @@ Run text inference based on the supplied parameters.
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ChatApi.new
+api_instance = VeniceClient::ChatApi.new
 opts = { 
-  body: SwaggerClient::ChatCompletionRequest.new # ChatCompletionRequest | 
+  body: VeniceClient::ChatCompletionRequest.new # ChatCompletionRequest | 
   accept_encoding: 'accept_encoding_example' # String | Supported compression encodings (gzip, br). Only applied when stream is false.
 }
 
@@ -31,7 +31,7 @@ begin
   #/api/v1/chat/completions
   result = api_instance.create_chat_completion(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ChatApi->create_chat_completion: #{e}"
 end
 ```

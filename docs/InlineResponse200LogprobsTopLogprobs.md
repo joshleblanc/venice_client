@@ -1,4 +1,4 @@
-# SwaggerClient::InlineResponse200LogprobsTopLogprobs
+# VeniceClient::InlineResponse200LogprobsTopLogprobs
 
 ## Properties
 Name | Type | Description | Notes

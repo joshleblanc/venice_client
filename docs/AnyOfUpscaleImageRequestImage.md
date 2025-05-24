@@ -1,4 +1,4 @@
-# SwaggerClient::AnyOfUpscaleImageRequestImage
+# VeniceClient::AnyOfUpscaleImageRequestImage
 
 ## Properties
 Name | Type | Description | Notes

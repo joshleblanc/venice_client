@@ -1,4 +1,4 @@
-# SwaggerClient::InlineResponse20010DataRateLimits1
+# VeniceClient::InlineResponse20010DataRateLimits1
 
 ## Properties
 Name | Type | Description | Notes

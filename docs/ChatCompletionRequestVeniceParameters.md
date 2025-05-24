@@ -1,4 +1,4 @@
-# SwaggerClient::ChatCompletionRequestVeniceParameters
+# VeniceClient::ChatCompletionRequestVeniceParameters
 
 ## Properties
 Name | Type | Description | Notes

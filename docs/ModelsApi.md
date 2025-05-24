@@ -1,4 +1,4 @@
-# SwaggerClient::ModelsApi
+# VeniceClient::ModelsApi
 
 All URIs are relative to *https://api.venice.ai/api/v1*
 
@@ -20,10 +20,10 @@ Returns a list of model compatibility mappings and the associated model.
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ModelsApi.new
+api_instance = VeniceClient::ModelsApi.new
 opts = { 
   type: 'text' # String | 
 }
@@ -32,7 +32,7 @@ begin
   #/api/v1/models/compatibility_mapping
   result = api_instance.list_model_compatibility_mapping(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ModelsApi->list_model_compatibility_mapping: #{e}"
 end
 ```
@@ -70,10 +70,10 @@ Returns a list of model traits and the associated model.
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ModelsApi.new
+api_instance = VeniceClient::ModelsApi.new
 opts = { 
   type: 'text' # String | 
 }
@@ -82,7 +82,7 @@ begin
   #/api/v1/models/traits
   result = api_instance.list_model_traits(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ModelsApi->list_model_traits: #{e}"
 end
 ```
@@ -120,19 +120,19 @@ Returns a list of available models supported by the Venice.ai API for both text 
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ModelsApi.new
+api_instance = VeniceClient::ModelsApi.new
 opts = { 
-  type: SwaggerClient::Type.new # Type | 
+  type: VeniceClient::Type.new # Type | 
 }
 
 begin
   #/api/v1/models
   result = api_instance.list_models(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ModelsApi->list_models: #{e}"
 end
 ```

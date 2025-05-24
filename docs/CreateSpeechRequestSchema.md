@@ -1,4 +1,4 @@
-# SwaggerClient::CreateSpeechRequestSchema
+# VeniceClient::CreateSpeechRequestSchema
 
 ## Properties
 Name | Type | Description | Notes

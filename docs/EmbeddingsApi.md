@@ -1,4 +1,4 @@
-# SwaggerClient::EmbeddingsApi
+# VeniceClient::EmbeddingsApi
 
 All URIs are relative to *https://api.venice.ai/api/v1*
 
@@ -18,11 +18,11 @@ Create embeddings for the supplied input. This is a beta model accessible to Ven
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::EmbeddingsApi.new
-body = SwaggerClient::CreateEmbeddingRequestSchema.new # CreateEmbeddingRequestSchema | 
+api_instance = VeniceClient::EmbeddingsApi.new
+body = VeniceClient::CreateEmbeddingRequestSchema.new # CreateEmbeddingRequestSchema | 
 opts = { 
   accept_encoding: 'accept_encoding_example' # String | Supported compression encodings (gzip, br)
 }
@@ -31,7 +31,7 @@ begin
   #/api/v1/embeddings
   result = api_instance.create_embedding(body, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling EmbeddingsApi->create_embedding: #{e}"
 end
 ```

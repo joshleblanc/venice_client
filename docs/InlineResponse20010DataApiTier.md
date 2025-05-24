@@ -1,4 +1,4 @@
-# SwaggerClient::InlineResponse20010DataApiTier
+# VeniceClient::InlineResponse20010DataApiTier
 
 ## Properties
 Name | Type | Description | Notes

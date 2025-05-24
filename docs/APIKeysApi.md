@@ -1,4 +1,4 @@
-# SwaggerClient::APIKeysApi
+# VeniceClient::APIKeysApi
 
 All URIs are relative to *https://api.venice.ai/api/v1*
 
@@ -24,19 +24,19 @@ Create a new API key.
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 opts = { 
-  body: SwaggerClient::ApiKeysBody.new # ApiKeysBody | 
+  body: VeniceClient::ApiKeysBody.new # ApiKeysBody | 
 }
 
 begin
   #/api/v1/api_keys
   result = api_instance.create_api_key(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->create_api_key: #{e}"
 end
 ```
@@ -74,10 +74,10 @@ Delete an API key.
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 opts = { 
   id: 'id_example' # String | The ID of the API key to delete
 }
@@ -86,7 +86,7 @@ begin
   #/api/v1/api_keys
   result = api_instance.delete_api_key(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->delete_api_key: #{e}"
 end
 ```
@@ -124,13 +124,13 @@ Returns the token required to generate an API key via a wallet.
 # load the gem
 require 'swagger_client'
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 
 begin
   #/api/v1/api_keys/generate_web3_key
   result = api_instance.get_api_key_generate_web3_key
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->get_api_key_generate_web3_key: #{e}"
 end
 ```
@@ -165,16 +165,16 @@ Returns the last 50 rate limits that the account exceeded.
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 
 begin
   #/api/v1/api_keys/rate_limits/log
   result = api_instance.get_api_key_rate_limit_logs
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->get_api_key_rate_limit_logs: #{e}"
 end
 ```
@@ -209,16 +209,16 @@ Return details about user balances and rate limits.
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 
 begin
   #/api/v1/api_keys/rate_limits
   result = api_instance.get_api_key_rate_limits
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->get_api_key_rate_limits: #{e}"
 end
 ```
@@ -253,16 +253,16 @@ Return a list of API keys.
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 
 begin
   #/api/v1/api_keys
   result = api_instance.get_api_keys
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->get_api_keys: #{e}"
 end
 ```
@@ -297,16 +297,16 @@ Authenticates a wallet holding sVVV and creates an API key.
 # load the gem
 require 'swagger_client'
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 opts = { 
-  body: SwaggerClient::ApiKeysGenerateWeb3KeyBody.new # ApiKeysGenerateWeb3KeyBody | 
+  body: VeniceClient::ApiKeysGenerateWeb3KeyBody.new # ApiKeysGenerateWeb3KeyBody | 
 }
 
 begin
   #/api/v1/api_keys/generate_web3_key
   result = api_instance.post_api_key_generate_web3_key(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->post_api_key_generate_web3_key: #{e}"
 end
 ```

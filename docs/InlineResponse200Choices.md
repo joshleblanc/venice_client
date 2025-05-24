@@ -1,4 +1,4 @@
-# SwaggerClient::InlineResponse200Choices
+# VeniceClient::InlineResponse200Choices
 
 ## Properties
 Name | Type | Description | Notes

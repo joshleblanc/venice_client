@@ -1,4 +1,4 @@
-# SwaggerClient::ImageApi
+# VeniceClient::ImageApi
 
 All URIs are relative to *https://api.venice.ai/api/v1*
 
@@ -22,12 +22,12 @@ Generate an image based on input parameters
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ImageApi.new
+api_instance = VeniceClient::ImageApi.new
 opts = { 
-  body: SwaggerClient::GenerateImageRequest.new # GenerateImageRequest | 
+  body: VeniceClient::GenerateImageRequest.new # GenerateImageRequest | 
   accept_encoding: 'accept_encoding_example' # String | Supported compression encodings (gzip, br). Only applied when return_binary is false.
 }
 
@@ -35,7 +35,7 @@ begin
   #/api/v1/image/generate
   result = api_instance.generate_image(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ImageApi->generate_image: #{e}"
 end
 ```
@@ -74,16 +74,16 @@ List available image styles that can be used with the generate API.
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ImageApi.new
+api_instance = VeniceClient::ImageApi.new
 
 begin
   #/api/v1/image/styles
   result = api_instance.image_styles_get
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ImageApi->image_styles_get: #{e}"
 end
 ```
@@ -118,12 +118,12 @@ Generate an image based on input parameters using an OpenAI compatible endpoint.
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ImageApi.new
+api_instance = VeniceClient::ImageApi.new
 opts = { 
-  body: SwaggerClient::SimpleGenerateImageRequest.new # SimpleGenerateImageRequest | 
+  body: VeniceClient::SimpleGenerateImageRequest.new # SimpleGenerateImageRequest | 
   accept_encoding: 'accept_encoding_example' # String | Supported compression encodings (gzip, br).
 }
 
@@ -131,7 +131,7 @@ begin
   #/api/v1/image/generations
   result = api_instance.simple_generate_image(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ImageApi->simple_generate_image: #{e}"
 end
 ```
@@ -170,19 +170,19 @@ Upscale or enhance an image based on the supplied parameters. Using a scale of 1
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ImageApi.new
+api_instance = VeniceClient::ImageApi.new
 opts = { 
-  body: SwaggerClient::UpscaleImageRequest.new # UpscaleImageRequest | 
+  body: VeniceClient::UpscaleImageRequest.new # UpscaleImageRequest | 
 }
 
 begin
   #/api/v1/image/upscale
   result = api_instance.upscale_image(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ImageApi->upscale_image: #{e}"
 end
 ```
@@ -220,24 +220,24 @@ Upscale or enhance an image based on the supplied parameters. Using a scale of 1
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ImageApi.new
+api_instance = VeniceClient::ImageApi.new
 opts = { 
-  enhance: SwaggerClient::null.new #  | 
-  enhance_creativity: SwaggerClient::BigDecimal.new # BigDecimal | 
+  enhance: VeniceClient::null.new #  | 
+  enhance_creativity: VeniceClient::BigDecimal.new # BigDecimal | 
   enhance_prompt: 'enhance_prompt_example' # String | 
-  image: SwaggerClient::null.new #  | 
-  replication: SwaggerClient::BigDecimal.new # BigDecimal | 
-  scale: SwaggerClient::BigDecimal.new # BigDecimal | 
+  image: VeniceClient::null.new #  | 
+  replication: VeniceClient::BigDecimal.new # BigDecimal | 
+  scale: VeniceClient::BigDecimal.new # BigDecimal | 
 }
 
 begin
   #/api/v1/image/upscale
   result = api_instance.upscale_image(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ImageApi->upscale_image: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# SwaggerClient::AnyOfinlineResponse200ChoicesMessage
+# VeniceClient::AnyOfinlineResponse200ChoicesMessage
 
 ## Properties
 Name | Type | Description | Notes

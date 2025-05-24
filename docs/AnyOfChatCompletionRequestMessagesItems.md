@@ -1,4 +1,4 @@
-# SwaggerClient::AnyOfChatCompletionRequestMessagesItems
+# VeniceClient::AnyOfChatCompletionRequestMessagesItems
 
 ## Properties
 Name | Type | Description | Notes

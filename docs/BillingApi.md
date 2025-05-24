@@ -1,4 +1,4 @@
-# SwaggerClient::BillingApi
+# VeniceClient::BillingApi
 
 All URIs are relative to *https://api.venice.ai/api/v1*
 
@@ -18,10 +18,10 @@ Get paginated billing usage data for the authenticated user. NOTE: This is a bet
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::BillingApi.new
+api_instance = VeniceClient::BillingApi.new
 opts = { 
   accept: 'accept_example', # String | Accept header to specify the response format
   currency: 'currency_example', # String | 
@@ -36,7 +36,7 @@ begin
   #/api/v1/billing/usage
   result = api_instance.get_billing_usage(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling BillingApi->get_billing_usage: #{e}"
 end
 ```

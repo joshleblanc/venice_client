@@ -1,4 +1,4 @@
-# SwaggerClient::SimpleGenerateImageRequest
+# VeniceClient::SimpleGenerateImageRequest
 
 ## Properties
 Name | Type | Description | Notes

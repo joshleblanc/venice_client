@@ -1,4 +1,4 @@
-# SwaggerClient::BillingUsageResponsePagination
+# VeniceClient::BillingUsageResponsePagination
 
 ## Properties
 Name | Type | Description | Notes

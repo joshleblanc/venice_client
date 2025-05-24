@@ -1,4 +1,4 @@
-# SwaggerClient::ApiKeysBody
+# VeniceClient::ApiKeysBody
 
 ## Properties
 Name | Type | Description | Notes

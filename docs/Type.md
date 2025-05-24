@@ -1,4 +1,4 @@
-# SwaggerClient::Type
+# VeniceClient::Type
 
 ## Properties
 Name | Type | Description | Notes

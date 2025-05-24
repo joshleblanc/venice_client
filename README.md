@@ -1,6 +1,6 @@
 # swagger_client
 
-SwaggerClient - the Ruby gem for the Venice.ai API
+VeniceClient - the Ruby gem for the Venice.ai API
 
 The Venice.ai API.
 
@@ -54,26 +54,26 @@ Please follow the [installation](#installation) procedure and then run the follo
 # Load the gem
 require 'swagger_client'
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 opts = { 
-  body: SwaggerClient::ApiKeysBody.new # ApiKeysBody | 
+  body: VeniceClient::ApiKeysBody.new # ApiKeysBody | 
 }
 
 begin
   #/api/v1/api_keys
   result = api_instance.create_api_key(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->create_api_key: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 opts = { 
   id: 'id_example' # String | The ID of the API key to delete
 }
@@ -82,92 +82,92 @@ begin
   #/api/v1/api_keys
   result = api_instance.delete_api_key(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->delete_api_key: #{e}"
 end
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 
 begin
   #/api/v1/api_keys/generate_web3_key
   result = api_instance.get_api_key_generate_web3_key
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->get_api_key_generate_web3_key: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 
 begin
   #/api/v1/api_keys/rate_limits/log
   result = api_instance.get_api_key_rate_limit_logs
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->get_api_key_rate_limit_logs: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 
 begin
   #/api/v1/api_keys/rate_limits
   result = api_instance.get_api_key_rate_limits
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->get_api_key_rate_limits: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 
 begin
   #/api/v1/api_keys
   result = api_instance.get_api_keys
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->get_api_keys: #{e}"
 end
 
-api_instance = SwaggerClient::APIKeysApi.new
+api_instance = VeniceClient::APIKeysApi.new
 opts = { 
-  body: SwaggerClient::ApiKeysGenerateWeb3KeyBody.new # ApiKeysGenerateWeb3KeyBody | 
+  body: VeniceClient::ApiKeysGenerateWeb3KeyBody.new # ApiKeysGenerateWeb3KeyBody | 
 }
 
 begin
   #/api/v1/api_keys/generate_web3_key
   result = api_instance.post_api_key_generate_web3_key(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling APIKeysApi->post_api_key_generate_web3_key: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::AudioApi.new
+api_instance = VeniceClient::AudioApi.new
 opts = { 
-  body: SwaggerClient::CreateSpeechRequestSchema.new # CreateSpeechRequestSchema | 
+  body: VeniceClient::CreateSpeechRequestSchema.new # CreateSpeechRequestSchema | 
 }
 
 begin
   #/api/v1/audio/speech
   result = api_instance.create_speech(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling AudioApi->create_speech: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::BillingApi.new
+api_instance = VeniceClient::BillingApi.new
 opts = { 
   accept: 'accept_example', # String | Accept header to specify the response format
   currency: 'currency_example', # String | 
@@ -182,29 +182,29 @@ begin
   #/api/v1/billing/usage
   result = api_instance.get_billing_usage(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling BillingApi->get_billing_usage: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::CharactersApi.new
+api_instance = VeniceClient::CharactersApi.new
 
 begin
   #/api/v1/characters
   result = api_instance.list_characters
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling CharactersApi->list_characters: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ChatApi.new
+api_instance = VeniceClient::ChatApi.new
 opts = { 
-  body: SwaggerClient::ChatCompletionRequest.new, # ChatCompletionRequest | 
+  body: VeniceClient::ChatCompletionRequest.new, # ChatCompletionRequest | 
   accept_encoding: 'accept_encoding_example' # String | Supported compression encodings (gzip, br). Only applied when stream is false.
 }
 
@@ -212,15 +212,15 @@ begin
   #/api/v1/chat/completions
   result = api_instance.create_chat_completion(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ChatApi->create_chat_completion: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::EmbeddingsApi.new
-body = SwaggerClient::CreateEmbeddingRequestSchema.new # CreateEmbeddingRequestSchema | 
+api_instance = VeniceClient::EmbeddingsApi.new
+body = VeniceClient::CreateEmbeddingRequestSchema.new # CreateEmbeddingRequestSchema | 
 opts = { 
   accept_encoding: 'accept_encoding_example' # String | Supported compression encodings (gzip, br)
 }
@@ -229,16 +229,16 @@ begin
   #/api/v1/embeddings
   result = api_instance.create_embedding(body, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling EmbeddingsApi->create_embedding: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ImageApi.new
+api_instance = VeniceClient::ImageApi.new
 opts = { 
-  body: SwaggerClient::GenerateImageRequest.new, # GenerateImageRequest | 
+  body: VeniceClient::GenerateImageRequest.new, # GenerateImageRequest | 
   accept_encoding: 'accept_encoding_example' # String | Supported compression encodings (gzip, br). Only applied when return_binary is false.
 }
 
@@ -246,29 +246,29 @@ begin
   #/api/v1/image/generate
   result = api_instance.generate_image(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ImageApi->generate_image: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ImageApi.new
+api_instance = VeniceClient::ImageApi.new
 
 begin
   #/api/v1/image/styles
   result = api_instance.image_styles_get
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ImageApi->image_styles_get: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ImageApi.new
+api_instance = VeniceClient::ImageApi.new
 opts = { 
-  body: SwaggerClient::SimpleGenerateImageRequest.new, # SimpleGenerateImageRequest | 
+  body: VeniceClient::SimpleGenerateImageRequest.new, # SimpleGenerateImageRequest | 
   accept_encoding: 'accept_encoding_example' # String | Supported compression encodings (gzip, br).
 }
 
@@ -276,36 +276,36 @@ begin
   #/api/v1/image/generations
   result = api_instance.simple_generate_image(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ImageApi->simple_generate_image: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ImageApi.new
+api_instance = VeniceClient::ImageApi.new
 opts = { 
-  body: SwaggerClient::UpscaleImageRequest.new, # UpscaleImageRequest | 
-  enhance: SwaggerClient::null.new, #  | 
-  enhance_creativity: SwaggerClient::BigDecimal.new, # BigDecimal | 
+  body: VeniceClient::UpscaleImageRequest.new, # UpscaleImageRequest | 
+  enhance: VeniceClient::null.new, #  | 
+  enhance_creativity: VeniceClient::BigDecimal.new, # BigDecimal | 
   enhance_prompt: 'enhance_prompt_example', # String | 
-  image: SwaggerClient::null.new, #  | 
-  replication: SwaggerClient::BigDecimal.new, # BigDecimal | 
-  scale: SwaggerClient::BigDecimal.new # BigDecimal | 
+  image: VeniceClient::null.new, #  | 
+  replication: VeniceClient::BigDecimal.new, # BigDecimal | 
+  scale: VeniceClient::BigDecimal.new # BigDecimal | 
 }
 
 begin
   #/api/v1/image/upscale
   result = api_instance.upscale_image(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ImageApi->upscale_image: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ModelsApi.new
+api_instance = VeniceClient::ModelsApi.new
 opts = { 
   type: 'text' # String | 
 }
@@ -314,14 +314,14 @@ begin
   #/api/v1/models/compatibility_mapping
   result = api_instance.list_model_compatibility_mapping(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ModelsApi->list_model_compatibility_mapping: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ModelsApi.new
+api_instance = VeniceClient::ModelsApi.new
 opts = { 
   type: 'text' # String | 
 }
@@ -330,52 +330,52 @@ begin
   #/api/v1/models/traits
   result = api_instance.list_model_traits(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ModelsApi->list_model_traits: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::ModelsApi.new
+api_instance = VeniceClient::ModelsApi.new
 opts = { 
-  type: SwaggerClient::Type.new # Type | 
+  type: VeniceClient::Type.new # Type | 
 }
 
 begin
   #/api/v1/models
   result = api_instance.list_models(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling ModelsApi->list_models: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::PreviewApi.new
+api_instance = VeniceClient::PreviewApi.new
 
 begin
   #/api/v1/characters
   result = api_instance.list_characters
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling PreviewApi->list_characters: #{e}"
 end
 # Setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::SpeechApi.new
+api_instance = VeniceClient::SpeechApi.new
 opts = { 
-  body: SwaggerClient::CreateSpeechRequestSchema.new # CreateSpeechRequestSchema | 
+  body: VeniceClient::CreateSpeechRequestSchema.new # CreateSpeechRequestSchema | 
 }
 
 begin
   #/api/v1/audio/speech
   result = api_instance.create_speech(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling SpeechApi->create_speech: #{e}"
 end
 ```
@@ -386,121 +386,121 @@ All URIs are relative to *https://api.venice.ai/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SwaggerClient::APIKeysApi* | [**create_api_key**](docs/APIKeysApi.md#create_api_key) | **POST** /api_keys | /api/v1/api_keys
-*SwaggerClient::APIKeysApi* | [**delete_api_key**](docs/APIKeysApi.md#delete_api_key) | **DELETE** /api_keys | /api/v1/api_keys
-*SwaggerClient::APIKeysApi* | [**get_api_key_generate_web3_key**](docs/APIKeysApi.md#get_api_key_generate_web3_key) | **GET** /api_keys/generate_web3_key | /api/v1/api_keys/generate_web3_key
-*SwaggerClient::APIKeysApi* | [**get_api_key_rate_limit_logs**](docs/APIKeysApi.md#get_api_key_rate_limit_logs) | **GET** /api_keys/rate_limits/log | /api/v1/api_keys/rate_limits/log
-*SwaggerClient::APIKeysApi* | [**get_api_key_rate_limits**](docs/APIKeysApi.md#get_api_key_rate_limits) | **GET** /api_keys/rate_limits | /api/v1/api_keys/rate_limits
-*SwaggerClient::APIKeysApi* | [**get_api_keys**](docs/APIKeysApi.md#get_api_keys) | **GET** /api_keys | /api/v1/api_keys
-*SwaggerClient::APIKeysApi* | [**post_api_key_generate_web3_key**](docs/APIKeysApi.md#post_api_key_generate_web3_key) | **POST** /api_keys/generate_web3_key | /api/v1/api_keys/generate_web3_key
-*SwaggerClient::AudioApi* | [**create_speech**](docs/AudioApi.md#create_speech) | **POST** /audio/speech | /api/v1/audio/speech
-*SwaggerClient::BillingApi* | [**get_billing_usage**](docs/BillingApi.md#get_billing_usage) | **GET** /billing/usage | /api/v1/billing/usage
-*SwaggerClient::CharactersApi* | [**list_characters**](docs/CharactersApi.md#list_characters) | **GET** /characters | /api/v1/characters
-*SwaggerClient::ChatApi* | [**create_chat_completion**](docs/ChatApi.md#create_chat_completion) | **POST** /chat/completions | /api/v1/chat/completions
-*SwaggerClient::EmbeddingsApi* | [**create_embedding**](docs/EmbeddingsApi.md#create_embedding) | **POST** /embeddings | /api/v1/embeddings
-*SwaggerClient::ImageApi* | [**generate_image**](docs/ImageApi.md#generate_image) | **POST** /image/generate | /api/v1/image/generate
-*SwaggerClient::ImageApi* | [**image_styles_get**](docs/ImageApi.md#image_styles_get) | **GET** /image/styles | /api/v1/image/styles
-*SwaggerClient::ImageApi* | [**simple_generate_image**](docs/ImageApi.md#simple_generate_image) | **POST** /images/generations | /api/v1/image/generations
-*SwaggerClient::ImageApi* | [**upscale_image**](docs/ImageApi.md#upscale_image) | **POST** /image/upscale | /api/v1/image/upscale
-*SwaggerClient::ModelsApi* | [**list_model_compatibility_mapping**](docs/ModelsApi.md#list_model_compatibility_mapping) | **GET** /models/compatibility_mapping | /api/v1/models/compatibility_mapping
-*SwaggerClient::ModelsApi* | [**list_model_traits**](docs/ModelsApi.md#list_model_traits) | **GET** /models/traits | /api/v1/models/traits
-*SwaggerClient::ModelsApi* | [**list_models**](docs/ModelsApi.md#list_models) | **GET** /models | /api/v1/models
-*SwaggerClient::PreviewApi* | [**list_characters**](docs/PreviewApi.md#list_characters) | **GET** /characters | /api/v1/characters
-*SwaggerClient::SpeechApi* | [**create_speech**](docs/SpeechApi.md#create_speech) | **POST** /audio/speech | /api/v1/audio/speech
+*VeniceClient::APIKeysApi* | [**create_api_key**](docs/APIKeysApi.md#create_api_key) | **POST** /api_keys | /api/v1/api_keys
+*VeniceClient::APIKeysApi* | [**delete_api_key**](docs/APIKeysApi.md#delete_api_key) | **DELETE** /api_keys | /api/v1/api_keys
+*VeniceClient::APIKeysApi* | [**get_api_key_generate_web3_key**](docs/APIKeysApi.md#get_api_key_generate_web3_key) | **GET** /api_keys/generate_web3_key | /api/v1/api_keys/generate_web3_key
+*VeniceClient::APIKeysApi* | [**get_api_key_rate_limit_logs**](docs/APIKeysApi.md#get_api_key_rate_limit_logs) | **GET** /api_keys/rate_limits/log | /api/v1/api_keys/rate_limits/log
+*VeniceClient::APIKeysApi* | [**get_api_key_rate_limits**](docs/APIKeysApi.md#get_api_key_rate_limits) | **GET** /api_keys/rate_limits | /api/v1/api_keys/rate_limits
+*VeniceClient::APIKeysApi* | [**get_api_keys**](docs/APIKeysApi.md#get_api_keys) | **GET** /api_keys | /api/v1/api_keys
+*VeniceClient::APIKeysApi* | [**post_api_key_generate_web3_key**](docs/APIKeysApi.md#post_api_key_generate_web3_key) | **POST** /api_keys/generate_web3_key | /api/v1/api_keys/generate_web3_key
+*VeniceClient::AudioApi* | [**create_speech**](docs/AudioApi.md#create_speech) | **POST** /audio/speech | /api/v1/audio/speech
+*VeniceClient::BillingApi* | [**get_billing_usage**](docs/BillingApi.md#get_billing_usage) | **GET** /billing/usage | /api/v1/billing/usage
+*VeniceClient::CharactersApi* | [**list_characters**](docs/CharactersApi.md#list_characters) | **GET** /characters | /api/v1/characters
+*VeniceClient::ChatApi* | [**create_chat_completion**](docs/ChatApi.md#create_chat_completion) | **POST** /chat/completions | /api/v1/chat/completions
+*VeniceClient::EmbeddingsApi* | [**create_embedding**](docs/EmbeddingsApi.md#create_embedding) | **POST** /embeddings | /api/v1/embeddings
+*VeniceClient::ImageApi* | [**generate_image**](docs/ImageApi.md#generate_image) | **POST** /image/generate | /api/v1/image/generate
+*VeniceClient::ImageApi* | [**image_styles_get**](docs/ImageApi.md#image_styles_get) | **GET** /image/styles | /api/v1/image/styles
+*VeniceClient::ImageApi* | [**simple_generate_image**](docs/ImageApi.md#simple_generate_image) | **POST** /images/generations | /api/v1/image/generations
+*VeniceClient::ImageApi* | [**upscale_image**](docs/ImageApi.md#upscale_image) | **POST** /image/upscale | /api/v1/image/upscale
+*VeniceClient::ModelsApi* | [**list_model_compatibility_mapping**](docs/ModelsApi.md#list_model_compatibility_mapping) | **GET** /models/compatibility_mapping | /api/v1/models/compatibility_mapping
+*VeniceClient::ModelsApi* | [**list_model_traits**](docs/ModelsApi.md#list_model_traits) | **GET** /models/traits | /api/v1/models/traits
+*VeniceClient::ModelsApi* | [**list_models**](docs/ModelsApi.md#list_models) | **GET** /models | /api/v1/models
+*VeniceClient::PreviewApi* | [**list_characters**](docs/PreviewApi.md#list_characters) | **GET** /characters | /api/v1/characters
+*VeniceClient::SpeechApi* | [**create_speech**](docs/SpeechApi.md#create_speech) | **POST** /audio/speech | /api/v1/audio/speech
 
 ## Documentation for Models
 
- - [SwaggerClient::AnyOfChatCompletionRequestMessagesItems](docs/AnyOfChatCompletionRequestMessagesItems.md)
- - [SwaggerClient::AnyOfChatCompletionRequestStop](docs/AnyOfChatCompletionRequestStop.md)
- - [SwaggerClient::AnyOfChatCompletionRequestToolChoice](docs/AnyOfChatCompletionRequestToolChoice.md)
- - [SwaggerClient::AnyOfCreateEmbeddingRequestSchemaInput](docs/AnyOfCreateEmbeddingRequestSchemaInput.md)
- - [SwaggerClient::AnyOfCreateEmbeddingRequestSchemaModel](docs/AnyOfCreateEmbeddingRequestSchemaModel.md)
- - [SwaggerClient::AnyOfModelResponseModelSpecConstraints](docs/AnyOfModelResponseModelSpecConstraints.md)
- - [SwaggerClient::AnyOfModelResponseModelSpecPricing](docs/AnyOfModelResponseModelSpecPricing.md)
- - [SwaggerClient::AnyOfUpscaleImageRequestEnhance](docs/AnyOfUpscaleImageRequestEnhance.md)
- - [SwaggerClient::AnyOfUpscaleImageRequestImage](docs/AnyOfUpscaleImageRequestImage.md)
- - [SwaggerClient::AnyOfapiKeysBodyExpiresAt](docs/AnyOfapiKeysBodyExpiresAt.md)
- - [SwaggerClient::AnyOfapiKeysConsumptionLimitUsd](docs/AnyOfapiKeysConsumptionLimitUsd.md)
- - [SwaggerClient::AnyOfapiKeysConsumptionLimitVcu](docs/AnyOfapiKeysConsumptionLimitVcu.md)
- - [SwaggerClient::AnyOfapiKeysGenerateWeb3KeyBodyExpiresAt](docs/AnyOfapiKeysGenerateWeb3KeyBodyExpiresAt.md)
- - [SwaggerClient::AnyOfinlineResponse2002DataItems](docs/AnyOfinlineResponse2002DataItems.md)
- - [SwaggerClient::AnyOfinlineResponse2004Type](docs/AnyOfinlineResponse2004Type.md)
- - [SwaggerClient::AnyOfinlineResponse2005Type](docs/AnyOfinlineResponse2005Type.md)
- - [SwaggerClient::AnyOfinlineResponse2006Type](docs/AnyOfinlineResponse2006Type.md)
- - [SwaggerClient::AnyOfinlineResponse200ChoicesMessage](docs/AnyOfinlineResponse200ChoicesMessage.md)
- - [SwaggerClient::AnyOfinlineResponse200PromptLogprobs](docs/AnyOfinlineResponse200PromptLogprobs.md)
- - [SwaggerClient::ApiKeysBody](docs/ApiKeysBody.md)
- - [SwaggerClient::ApiKeysConsumptionLimit](docs/ApiKeysConsumptionLimit.md)
- - [SwaggerClient::ApiKeysGenerateWeb3KeyBody](docs/ApiKeysGenerateWeb3KeyBody.md)
- - [SwaggerClient::BillingUsageRequest](docs/BillingUsageRequest.md)
- - [SwaggerClient::BillingUsageResponse](docs/BillingUsageResponse.md)
- - [SwaggerClient::BillingUsageResponseData](docs/BillingUsageResponseData.md)
- - [SwaggerClient::BillingUsageResponseInferenceDetails](docs/BillingUsageResponseInferenceDetails.md)
- - [SwaggerClient::BillingUsageResponsePagination](docs/BillingUsageResponsePagination.md)
- - [SwaggerClient::ChatCompletionRequest](docs/ChatCompletionRequest.md)
- - [SwaggerClient::ChatCompletionRequestFunction](docs/ChatCompletionRequestFunction.md)
- - [SwaggerClient::ChatCompletionRequestStreamOptions](docs/ChatCompletionRequestStreamOptions.md)
- - [SwaggerClient::ChatCompletionRequestVeniceParameters](docs/ChatCompletionRequestVeniceParameters.md)
- - [SwaggerClient::CreateEmbeddingRequestSchema](docs/CreateEmbeddingRequestSchema.md)
- - [SwaggerClient::CreateSpeechRequestSchema](docs/CreateSpeechRequestSchema.md)
- - [SwaggerClient::GenerateImageRequest](docs/GenerateImageRequest.md)
- - [SwaggerClient::InlineResponse200](docs/InlineResponse200.md)
- - [SwaggerClient::InlineResponse2001](docs/InlineResponse2001.md)
- - [SwaggerClient::InlineResponse20010](docs/InlineResponse20010.md)
- - [SwaggerClient::InlineResponse20010Data](docs/InlineResponse20010Data.md)
- - [SwaggerClient::InlineResponse20010DataApiTier](docs/InlineResponse20010DataApiTier.md)
- - [SwaggerClient::InlineResponse20010DataBalances](docs/InlineResponse20010DataBalances.md)
- - [SwaggerClient::InlineResponse20010DataRateLimits](docs/InlineResponse20010DataRateLimits.md)
- - [SwaggerClient::InlineResponse20010DataRateLimits1](docs/InlineResponse20010DataRateLimits1.md)
- - [SwaggerClient::InlineResponse20011](docs/InlineResponse20011.md)
- - [SwaggerClient::InlineResponse20011Data](docs/InlineResponse20011Data.md)
- - [SwaggerClient::InlineResponse20012](docs/InlineResponse20012.md)
- - [SwaggerClient::InlineResponse20012Data](docs/InlineResponse20012Data.md)
- - [SwaggerClient::InlineResponse20013](docs/InlineResponse20013.md)
- - [SwaggerClient::InlineResponse20013Data](docs/InlineResponse20013Data.md)
- - [SwaggerClient::InlineResponse20013Stats](docs/InlineResponse20013Stats.md)
- - [SwaggerClient::InlineResponse20014](docs/InlineResponse20014.md)
- - [SwaggerClient::InlineResponse20014Data](docs/InlineResponse20014Data.md)
- - [SwaggerClient::InlineResponse20014Usage](docs/InlineResponse20014Usage.md)
- - [SwaggerClient::InlineResponse20015](docs/InlineResponse20015.md)
- - [SwaggerClient::InlineResponse2001Timing](docs/InlineResponse2001Timing.md)
- - [SwaggerClient::InlineResponse2002](docs/InlineResponse2002.md)
- - [SwaggerClient::InlineResponse2003](docs/InlineResponse2003.md)
- - [SwaggerClient::InlineResponse2004](docs/InlineResponse2004.md)
- - [SwaggerClient::InlineResponse2005](docs/InlineResponse2005.md)
- - [SwaggerClient::InlineResponse2006](docs/InlineResponse2006.md)
- - [SwaggerClient::InlineResponse2007](docs/InlineResponse2007.md)
- - [SwaggerClient::InlineResponse2007Data](docs/InlineResponse2007Data.md)
- - [SwaggerClient::InlineResponse2007Usage](docs/InlineResponse2007Usage.md)
- - [SwaggerClient::InlineResponse2007UsageTrailingSevenDays](docs/InlineResponse2007UsageTrailingSevenDays.md)
- - [SwaggerClient::InlineResponse2008](docs/InlineResponse2008.md)
- - [SwaggerClient::InlineResponse2008Data](docs/InlineResponse2008Data.md)
- - [SwaggerClient::InlineResponse2009](docs/InlineResponse2009.md)
- - [SwaggerClient::InlineResponse200Choices](docs/InlineResponse200Choices.md)
- - [SwaggerClient::InlineResponse200Logprobs](docs/InlineResponse200Logprobs.md)
- - [SwaggerClient::InlineResponse200LogprobsTopLogprobs](docs/InlineResponse200LogprobsTopLogprobs.md)
- - [SwaggerClient::InlineResponse200Usage](docs/InlineResponse200Usage.md)
- - [SwaggerClient::InlineResponse200VeniceParameters](docs/InlineResponse200VeniceParameters.md)
- - [SwaggerClient::InlineResponse200VeniceParametersWebSearchCitations](docs/InlineResponse200VeniceParametersWebSearchCitations.md)
- - [SwaggerClient::InlineResponse400](docs/InlineResponse400.md)
- - [SwaggerClient::InlineResponse401](docs/InlineResponse401.md)
- - [SwaggerClient::InlineResponse402](docs/InlineResponse402.md)
- - [SwaggerClient::InlineResponse403](docs/InlineResponse403.md)
- - [SwaggerClient::InlineResponse415](docs/InlineResponse415.md)
- - [SwaggerClient::InlineResponse429](docs/InlineResponse429.md)
- - [SwaggerClient::InlineResponse500](docs/InlineResponse500.md)
- - [SwaggerClient::InlineResponse5001](docs/InlineResponse5001.md)
- - [SwaggerClient::InlineResponse503](docs/InlineResponse503.md)
- - [SwaggerClient::ModelCompatibilitySchema](docs/ModelCompatibilitySchema.md)
- - [SwaggerClient::ModelResponse](docs/ModelResponse.md)
- - [SwaggerClient::ModelResponseModelSpec](docs/ModelResponseModelSpec.md)
- - [SwaggerClient::ModelResponseModelSpecCapabilities](docs/ModelResponseModelSpecCapabilities.md)
- - [SwaggerClient::ModelTraitSchema](docs/ModelTraitSchema.md)
- - [SwaggerClient::OneOfChatCompletionRequestResponseFormat](docs/OneOfChatCompletionRequestResponseFormat.md)
- - [SwaggerClient::SimpleGenerateImageRequest](docs/SimpleGenerateImageRequest.md)
- - [SwaggerClient::ToolCall](docs/ToolCall.md)
- - [SwaggerClient::Type](docs/Type.md)
- - [SwaggerClient::UpscaleImageRequest](docs/UpscaleImageRequest.md)
+ - [VeniceClient::AnyOfChatCompletionRequestMessagesItems](docs/AnyOfChatCompletionRequestMessagesItems.md)
+ - [VeniceClient::AnyOfChatCompletionRequestStop](docs/AnyOfChatCompletionRequestStop.md)
+ - [VeniceClient::AnyOfChatCompletionRequestToolChoice](docs/AnyOfChatCompletionRequestToolChoice.md)
+ - [VeniceClient::AnyOfCreateEmbeddingRequestSchemaInput](docs/AnyOfCreateEmbeddingRequestSchemaInput.md)
+ - [VeniceClient::AnyOfCreateEmbeddingRequestSchemaModel](docs/AnyOfCreateEmbeddingRequestSchemaModel.md)
+ - [VeniceClient::AnyOfModelResponseModelSpecConstraints](docs/AnyOfModelResponseModelSpecConstraints.md)
+ - [VeniceClient::AnyOfModelResponseModelSpecPricing](docs/AnyOfModelResponseModelSpecPricing.md)
+ - [VeniceClient::AnyOfUpscaleImageRequestEnhance](docs/AnyOfUpscaleImageRequestEnhance.md)
+ - [VeniceClient::AnyOfUpscaleImageRequestImage](docs/AnyOfUpscaleImageRequestImage.md)
+ - [VeniceClient::AnyOfapiKeysBodyExpiresAt](docs/AnyOfapiKeysBodyExpiresAt.md)
+ - [VeniceClient::AnyOfapiKeysConsumptionLimitUsd](docs/AnyOfapiKeysConsumptionLimitUsd.md)
+ - [VeniceClient::AnyOfapiKeysConsumptionLimitVcu](docs/AnyOfapiKeysConsumptionLimitVcu.md)
+ - [VeniceClient::AnyOfapiKeysGenerateWeb3KeyBodyExpiresAt](docs/AnyOfapiKeysGenerateWeb3KeyBodyExpiresAt.md)
+ - [VeniceClient::AnyOfinlineResponse2002DataItems](docs/AnyOfinlineResponse2002DataItems.md)
+ - [VeniceClient::AnyOfinlineResponse2004Type](docs/AnyOfinlineResponse2004Type.md)
+ - [VeniceClient::AnyOfinlineResponse2005Type](docs/AnyOfinlineResponse2005Type.md)
+ - [VeniceClient::AnyOfinlineResponse2006Type](docs/AnyOfinlineResponse2006Type.md)
+ - [VeniceClient::AnyOfinlineResponse200ChoicesMessage](docs/AnyOfinlineResponse200ChoicesMessage.md)
+ - [VeniceClient::AnyOfinlineResponse200PromptLogprobs](docs/AnyOfinlineResponse200PromptLogprobs.md)
+ - [VeniceClient::ApiKeysBody](docs/ApiKeysBody.md)
+ - [VeniceClient::ApiKeysConsumptionLimit](docs/ApiKeysConsumptionLimit.md)
+ - [VeniceClient::ApiKeysGenerateWeb3KeyBody](docs/ApiKeysGenerateWeb3KeyBody.md)
+ - [VeniceClient::BillingUsageRequest](docs/BillingUsageRequest.md)
+ - [VeniceClient::BillingUsageResponse](docs/BillingUsageResponse.md)
+ - [VeniceClient::BillingUsageResponseData](docs/BillingUsageResponseData.md)
+ - [VeniceClient::BillingUsageResponseInferenceDetails](docs/BillingUsageResponseInferenceDetails.md)
+ - [VeniceClient::BillingUsageResponsePagination](docs/BillingUsageResponsePagination.md)
+ - [VeniceClient::ChatCompletionRequest](docs/ChatCompletionRequest.md)
+ - [VeniceClient::ChatCompletionRequestFunction](docs/ChatCompletionRequestFunction.md)
+ - [VeniceClient::ChatCompletionRequestStreamOptions](docs/ChatCompletionRequestStreamOptions.md)
+ - [VeniceClient::ChatCompletionRequestVeniceParameters](docs/ChatCompletionRequestVeniceParameters.md)
+ - [VeniceClient::CreateEmbeddingRequestSchema](docs/CreateEmbeddingRequestSchema.md)
+ - [VeniceClient::CreateSpeechRequestSchema](docs/CreateSpeechRequestSchema.md)
+ - [VeniceClient::GenerateImageRequest](docs/GenerateImageRequest.md)
+ - [VeniceClient::InlineResponse200](docs/InlineResponse200.md)
+ - [VeniceClient::InlineResponse2001](docs/InlineResponse2001.md)
+ - [VeniceClient::InlineResponse20010](docs/InlineResponse20010.md)
+ - [VeniceClient::InlineResponse20010Data](docs/InlineResponse20010Data.md)
+ - [VeniceClient::InlineResponse20010DataApiTier](docs/InlineResponse20010DataApiTier.md)
+ - [VeniceClient::InlineResponse20010DataBalances](docs/InlineResponse20010DataBalances.md)
+ - [VeniceClient::InlineResponse20010DataRateLimits](docs/InlineResponse20010DataRateLimits.md)
+ - [VeniceClient::InlineResponse20010DataRateLimits1](docs/InlineResponse20010DataRateLimits1.md)
+ - [VeniceClient::InlineResponse20011](docs/InlineResponse20011.md)
+ - [VeniceClient::InlineResponse20011Data](docs/InlineResponse20011Data.md)
+ - [VeniceClient::InlineResponse20012](docs/InlineResponse20012.md)
+ - [VeniceClient::InlineResponse20012Data](docs/InlineResponse20012Data.md)
+ - [VeniceClient::InlineResponse20013](docs/InlineResponse20013.md)
+ - [VeniceClient::InlineResponse20013Data](docs/InlineResponse20013Data.md)
+ - [VeniceClient::InlineResponse20013Stats](docs/InlineResponse20013Stats.md)
+ - [VeniceClient::InlineResponse20014](docs/InlineResponse20014.md)
+ - [VeniceClient::InlineResponse20014Data](docs/InlineResponse20014Data.md)
+ - [VeniceClient::InlineResponse20014Usage](docs/InlineResponse20014Usage.md)
+ - [VeniceClient::InlineResponse20015](docs/InlineResponse20015.md)
+ - [VeniceClient::InlineResponse2001Timing](docs/InlineResponse2001Timing.md)
+ - [VeniceClient::InlineResponse2002](docs/InlineResponse2002.md)
+ - [VeniceClient::InlineResponse2003](docs/InlineResponse2003.md)
+ - [VeniceClient::InlineResponse2004](docs/InlineResponse2004.md)
+ - [VeniceClient::InlineResponse2005](docs/InlineResponse2005.md)
+ - [VeniceClient::InlineResponse2006](docs/InlineResponse2006.md)
+ - [VeniceClient::InlineResponse2007](docs/InlineResponse2007.md)
+ - [VeniceClient::InlineResponse2007Data](docs/InlineResponse2007Data.md)
+ - [VeniceClient::InlineResponse2007Usage](docs/InlineResponse2007Usage.md)
+ - [VeniceClient::InlineResponse2007UsageTrailingSevenDays](docs/InlineResponse2007UsageTrailingSevenDays.md)
+ - [VeniceClient::InlineResponse2008](docs/InlineResponse2008.md)
+ - [VeniceClient::InlineResponse2008Data](docs/InlineResponse2008Data.md)
+ - [VeniceClient::InlineResponse2009](docs/InlineResponse2009.md)
+ - [VeniceClient::InlineResponse200Choices](docs/InlineResponse200Choices.md)
+ - [VeniceClient::InlineResponse200Logprobs](docs/InlineResponse200Logprobs.md)
+ - [VeniceClient::InlineResponse200LogprobsTopLogprobs](docs/InlineResponse200LogprobsTopLogprobs.md)
+ - [VeniceClient::InlineResponse200Usage](docs/InlineResponse200Usage.md)
+ - [VeniceClient::InlineResponse200VeniceParameters](docs/InlineResponse200VeniceParameters.md)
+ - [VeniceClient::InlineResponse200VeniceParametersWebSearchCitations](docs/InlineResponse200VeniceParametersWebSearchCitations.md)
+ - [VeniceClient::InlineResponse400](docs/InlineResponse400.md)
+ - [VeniceClient::InlineResponse401](docs/InlineResponse401.md)
+ - [VeniceClient::InlineResponse402](docs/InlineResponse402.md)
+ - [VeniceClient::InlineResponse403](docs/InlineResponse403.md)
+ - [VeniceClient::InlineResponse415](docs/InlineResponse415.md)
+ - [VeniceClient::InlineResponse429](docs/InlineResponse429.md)
+ - [VeniceClient::InlineResponse500](docs/InlineResponse500.md)
+ - [VeniceClient::InlineResponse5001](docs/InlineResponse5001.md)
+ - [VeniceClient::InlineResponse503](docs/InlineResponse503.md)
+ - [VeniceClient::ModelCompatibilitySchema](docs/ModelCompatibilitySchema.md)
+ - [VeniceClient::ModelResponse](docs/ModelResponse.md)
+ - [VeniceClient::ModelResponseModelSpec](docs/ModelResponseModelSpec.md)
+ - [VeniceClient::ModelResponseModelSpecCapabilities](docs/ModelResponseModelSpecCapabilities.md)
+ - [VeniceClient::ModelTraitSchema](docs/ModelTraitSchema.md)
+ - [VeniceClient::OneOfChatCompletionRequestResponseFormat](docs/OneOfChatCompletionRequestResponseFormat.md)
+ - [VeniceClient::SimpleGenerateImageRequest](docs/SimpleGenerateImageRequest.md)
+ - [VeniceClient::ToolCall](docs/ToolCall.md)
+ - [VeniceClient::Type](docs/Type.md)
+ - [VeniceClient::UpscaleImageRequest](docs/UpscaleImageRequest.md)
 
 ## Documentation for Authorization
 

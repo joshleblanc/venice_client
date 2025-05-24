@@ -1,4 +1,4 @@
-# SwaggerClient::PreviewApi
+# VeniceClient::PreviewApi
 
 All URIs are relative to *https://api.venice.ai/api/v1*
 
@@ -18,16 +18,16 @@ This is a preview API and may change. Returns a list of characters supported in 
 # load the gem
 require 'swagger_client'
 # setup authorization
-SwaggerClient.configure do |config|
+VeniceClient.configure do |config|
 end
 
-api_instance = SwaggerClient::PreviewApi.new
+api_instance = VeniceClient::PreviewApi.new
 
 begin
   #/api/v1/characters
   result = api_instance.list_characters
   p result
-rescue SwaggerClient::ApiError => e
+rescue VeniceClient::ApiError => e
   puts "Exception when calling PreviewApi->list_characters: #{e}"
 end
 ```
