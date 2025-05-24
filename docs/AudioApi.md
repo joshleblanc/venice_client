@@ -16,7 +16,7 @@ Converts text to speech using various voice models and formats.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end

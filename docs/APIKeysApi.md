@@ -22,7 +22,7 @@ Create a new API key.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end
@@ -72,7 +72,7 @@ Delete an API key.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end
@@ -122,7 +122,7 @@ Returns the token required to generate an API key via a wallet.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 
 api_instance = VeniceClient::APIKeysApi.new
 
@@ -163,7 +163,7 @@ Returns the last 50 rate limits that the account exceeded.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end
@@ -207,7 +207,7 @@ Return details about user balances and rate limits.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end
@@ -251,7 +251,7 @@ Return a list of API keys.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end
@@ -295,7 +295,7 @@ Authenticates a wallet holding sVVV and creates an API key.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 
 api_instance = VeniceClient::APIKeysApi.new
 opts = { 

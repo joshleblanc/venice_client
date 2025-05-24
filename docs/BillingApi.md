@@ -16,7 +16,7 @@ Get paginated billing usage data for the authenticated user. NOTE: This is a bet
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end

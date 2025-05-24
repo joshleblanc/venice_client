@@ -12,10 +12,10 @@ Swagger Codegen version: 3.0.68
 =end
 
 $:.push File.expand_path("../lib", __FILE__)
-require "swagger_client/version"
+require "venice_client/version"
 
 Gem::Specification.new do |s|
-  s.name = "swagger_client"
+  s.name = "venice_client"
   s.version = VeniceClient::VERSION
   s.platform = Gem::Platform::RUBY
   s.authors = ["Swagger-Codegen"]

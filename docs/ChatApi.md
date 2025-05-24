@@ -16,7 +16,7 @@ Run text inference based on the supplied parameters.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end

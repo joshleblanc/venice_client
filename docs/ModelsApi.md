@@ -18,7 +18,7 @@ Returns a list of model compatibility mappings and the associated model.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end
@@ -68,7 +68,7 @@ Returns a list of model traits and the associated model.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end
@@ -118,7 +118,7 @@ Returns a list of available models supported by the Venice.ai API for both text 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end

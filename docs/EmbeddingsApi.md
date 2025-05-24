@@ -16,7 +16,7 @@ Create embeddings for the supplied input. This is a beta model accessible to Ven
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end

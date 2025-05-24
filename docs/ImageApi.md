@@ -20,7 +20,7 @@ Generate an image based on input parameters
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end
@@ -72,7 +72,7 @@ List available image styles that can be used with the generate API.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end
@@ -116,7 +116,7 @@ Generate an image based on input parameters using an OpenAI compatible endpoint.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end
@@ -168,7 +168,7 @@ Upscale or enhance an image based on the supplied parameters. Using a scale of 1
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end
@@ -218,7 +218,7 @@ Upscale or enhance an image based on the supplied parameters. Using a scale of 1
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end

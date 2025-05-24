@@ -16,7 +16,7 @@ This is a preview API and may change. Returns a list of characters supported in 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
 end
