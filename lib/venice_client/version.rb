@@ -10,5 +10,5 @@ Swagger Codegen version: 3.0.68
 =end
 
 module VeniceClient
-  VERSION = "1.0.0"
+  VERSION = "1.0.1"
 end
