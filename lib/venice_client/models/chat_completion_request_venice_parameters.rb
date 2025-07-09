@@ -169,7 +169,7 @@ module VeniceClient
     # @return true if the model is valid
     def valid?
       warn "[DEPRECATED] the `valid?` method is obsolete"
-      enable_web_search_validator = EnumAttributeValidator.new("String", ["auto", "false", "true"])
+      enable_web_search_validator = EnumAttributeValidator.new("String", ["auto", "off", "on"])
       return false unless enable_web_search_validator.valid?(@enable_web_search)
       true
     end
@@ -177,7 +177,7 @@ module VeniceClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] enable_web_search Object to be assigned
     def enable_web_search=(enable_web_search)
-      validator = EnumAttributeValidator.new("String", ["auto", "false", "true"])
+      validator = EnumAttributeValidator.new("String", ["auto", "off", "on"])
       unless validator.valid?(enable_web_search)
         fail ArgumentError, "invalid value for \"enable_web_search\", must be one of #{validator.allowable_values}."
       end
