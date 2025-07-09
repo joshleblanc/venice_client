@@ -16,24 +16,26 @@ $:.push File.expand_path("../lib", __FILE__)
 require "venice_client/version"
 
 Gem::Specification.new do |s|
-  s.name        = "venice_client"
-  s.version     = VeniceClient::VERSION
-  s.platform    = Gem::Platform::RUBY
-  s.authors     = ["OpenAPI-Generator"]
-  s.email       = [""]
-  s.homepage    = "https://openapi-generator.tech"
-  s.summary     = "Venice.ai API Ruby Gem"
+  s.name = "venice_client"
+  s.version = VeniceClient::VERSION
+  s.platform = Gem::Platform::RUBY
+  s.authors = ["OpenAPI-Generator"]
+  s.email = [""]
+  s.homepage = "https://openapi-generator.tech"
+  s.summary = "Venice.ai API Ruby Gem"
   s.description = "The Venice.ai API."
-  s.license     = "Unlicense"
+  s.license = "Unlicense"
   s.required_ruby_version = ">= 2.7"
-  s.metadata    = {}
+  s.metadata = {}
 
-  s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
+  s.add_runtime_dependency "typhoeus", "~> 1.0", ">= 1.0.1"
 
-  s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
+  s.add_development_dependency "rspec", "~> 3.6", ">= 3.6.0"
 
-  s.files         = `find *`.split("\n").uniq.sort.select { |f| !f.empty? }
-  s.test_files    = `find spec/*`.split("\n")
-  s.executables   = []
+  s.files = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(%r{^(test|spec|features)/}) || f.match(%r{\.(gem|gemspec)$})
+  end
+  s.test_files = `git ls-files -- spec/*`.split("\n")
+  s.executables = []
   s.require_paths = ["lib"]
 end
