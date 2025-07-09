@@ -10,8 +10,8 @@ Generator version: 7.14.0
 
 =end
 
-require 'date'
-require 'time'
+require "date"
+require "time"
 
 module VeniceClient
   # Unique parameters to Venice's API implementation.
@@ -68,7 +68,7 @@ module VeniceClient
         :'enable_web_search' => :'enable_web_search',
         :'enable_web_citations' => :'enable_web_citations',
         :'include_search_results_in_stream' => :'include_search_results_in_stream',
-        :'include_venice_system_prompt' => :'include_venice_system_prompt'
+        :'include_venice_system_prompt' => :'include_venice_system_prompt',
       }
     end
 
@@ -91,14 +91,13 @@ module VeniceClient
         :'enable_web_search' => :'String',
         :'enable_web_citations' => :'Boolean',
         :'include_search_results_in_stream' => :'Boolean',
-        :'include_venice_system_prompt' => :'Boolean'
+        :'include_venice_system_prompt' => :'Boolean',
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
-      Set.new([
-      ])
+      Set.new([])
     end
 
     # Initializes the object
@@ -136,7 +135,7 @@ module VeniceClient
       if attributes.key?(:'enable_web_search')
         self.enable_web_search = attributes[:'enable_web_search']
       else
-        self.enable_web_search = 'false'
+        self.enable_web_search = "off"
       end
 
       if attributes.key?(:'enable_web_citations')
@@ -161,7 +160,7 @@ module VeniceClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
+      warn "[DEPRECATED] the `list_invalid_properties` method is obsolete"
       invalid_properties = Array.new
       invalid_properties
     end
@@ -169,8 +168,8 @@ module VeniceClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      warn '[DEPRECATED] the `valid?` method is obsolete'
-      enable_web_search_validator = EnumAttributeValidator.new('String', ["auto", "false", "true"])
+      warn "[DEPRECATED] the `valid?` method is obsolete"
+      enable_web_search_validator = EnumAttributeValidator.new("String", ["auto", "false", "true"])
       return false unless enable_web_search_validator.valid?(@enable_web_search)
       true
     end
@@ -178,7 +177,7 @@ module VeniceClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] enable_web_search Object to be assigned
     def enable_web_search=(enable_web_search)
-      validator = EnumAttributeValidator.new('String', ["auto", "false", "true"])
+      validator = EnumAttributeValidator.new("String", ["auto", "false", "true"])
       unless validator.valid?(enable_web_search)
         fail ArgumentError, "invalid value for \"enable_web_search\", must be one of #{validator.allowable_values}."
       end
@@ -190,13 +189,13 @@ module VeniceClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          character_slug == o.character_slug &&
-          strip_thinking_response == o.strip_thinking_response &&
-          disable_thinking == o.disable_thinking &&
-          enable_web_search == o.enable_web_search &&
-          enable_web_citations == o.enable_web_citations &&
-          include_search_results_in_stream == o.include_search_results_in_stream &&
-          include_venice_system_prompt == o.include_venice_system_prompt
+        character_slug == o.character_slug &&
+        strip_thinking_response == o.strip_thinking_response &&
+        disable_thinking == o.disable_thinking &&
+        enable_web_search == o.enable_web_search &&
+        enable_web_citations == o.enable_web_citations &&
+        include_search_results_in_stream == o.include_search_results_in_stream &&
+        include_venice_system_prompt == o.include_venice_system_prompt
     end
 
     # @see the `==` method
@@ -322,7 +321,5 @@ module VeniceClient
         value
       end
     end
-
   end
-
 end
