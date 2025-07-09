@@ -2,50 +2,73 @@
 
 All URIs are relative to *https://api.venice.ai/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**list_model_compatibility_mapping**](ModelsApi.md#list_model_compatibility_mapping) | **GET** /models/compatibility_mapping | /api/v1/models/compatibility_mapping
-[**list_model_traits**](ModelsApi.md#list_model_traits) | **GET** /models/traits | /api/v1/models/traits
-[**list_models**](ModelsApi.md#list_models) | **GET** /models | /api/v1/models
+| Method | HTTP request | Description |
+| ------ | ------------ | ----------- |
+| [**list_model_compatibility_mapping**](ModelsApi.md#list_model_compatibility_mapping) | **GET** /models/compatibility_mapping | /api/v1/models/compatibility_mapping |
+| [**list_model_traits**](ModelsApi.md#list_model_traits) | **GET** /models/traits | /api/v1/models/traits |
+| [**list_models**](ModelsApi.md#list_models) | **GET** /models | /api/v1/models |
 
-# **list_model_compatibility_mapping**
-> InlineResponse2006 list_model_compatibility_mapping(opts)
+
+## list_model_compatibility_mapping
+
+> <ListModelCompatibilityMapping200Response> list_model_compatibility_mapping(opts)
 
 /api/v1/models/compatibility_mapping
 
 Returns a list of model compatibility mappings and the associated model.
 
-### Example
+### Examples
+
 ```ruby
-# load the gem
+require 'time'
 require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
+  # Configure Bearer authorization (JWT): BearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = VeniceClient::ModelsApi.new
-opts = { 
-  type: 'text' # String | 
+opts = {
+  type: 'embedding' # String | 
 }
 
 begin
-  #/api/v1/models/compatibility_mapping
+  # /api/v1/models/compatibility_mapping
   result = api_instance.list_model_compatibility_mapping(opts)
   p result
 rescue VeniceClient::ApiError => e
-  puts "Exception when calling ModelsApi->list_model_compatibility_mapping: #{e}"
+  puts "Error when calling ModelsApi->list_model_compatibility_mapping: #{e}"
+end
+```
+
+#### Using the list_model_compatibility_mapping_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ListModelCompatibilityMapping200Response>, Integer, Hash)> list_model_compatibility_mapping_with_http_info(opts)
+
+```ruby
+begin
+  # /api/v1/models/compatibility_mapping
+  data, status_code, headers = api_instance.list_model_compatibility_mapping_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ListModelCompatibilityMapping200Response>
+rescue VeniceClient::ApiError => e
+  puts "Error when calling ModelsApi->list_model_compatibility_mapping_with_http_info: #{e}"
 end
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**|  | [optional] [default to text]
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **type** | **String** |  | [optional][default to &#39;text&#39;] |
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**ListModelCompatibilityMapping200Response**](ListModelCompatibilityMapping200Response.md)
 
 ### Authorization
 
@@ -53,49 +76,70 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_model_traits
 
-# **list_model_traits**
-> InlineResponse2005 list_model_traits(opts)
+> <ListModelTraits200Response> list_model_traits(opts)
 
 /api/v1/models/traits
 
 Returns a list of model traits and the associated model.
 
-### Example
+### Examples
+
 ```ruby
-# load the gem
+require 'time'
 require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
+  # Configure Bearer authorization (JWT): BearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = VeniceClient::ModelsApi.new
-opts = { 
-  type: 'text' # String | 
+opts = {
+  type: 'embedding' # String | 
 }
 
 begin
-  #/api/v1/models/traits
+  # /api/v1/models/traits
   result = api_instance.list_model_traits(opts)
   p result
 rescue VeniceClient::ApiError => e
-  puts "Exception when calling ModelsApi->list_model_traits: #{e}"
+  puts "Error when calling ModelsApi->list_model_traits: #{e}"
+end
+```
+
+#### Using the list_model_traits_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ListModelTraits200Response>, Integer, Hash)> list_model_traits_with_http_info(opts)
+
+```ruby
+begin
+  # /api/v1/models/traits
+  data, status_code, headers = api_instance.list_model_traits_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ListModelTraits200Response>
+rescue VeniceClient::ApiError => e
+  puts "Error when calling ModelsApi->list_model_traits_with_http_info: #{e}"
 end
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**|  | [optional] [default to text]
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **type** | **String** |  | [optional][default to &#39;text&#39;] |
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**ListModelTraits200Response**](ListModelTraits200Response.md)
 
 ### Authorization
 
@@ -103,49 +147,70 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_models
 
-# **list_models**
-> InlineResponse2004 list_models(opts)
+> <ListModels200Response> list_models(opts)
 
 /api/v1/models
 
 Returns a list of available models supported by the Venice.ai API for both text and image inference.
 
-### Example
+### Examples
+
 ```ruby
-# load the gem
+require 'time'
 require 'venice_client'
 # setup authorization
 VeniceClient.configure do |config|
+  # Configure Bearer authorization (JWT): BearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = VeniceClient::ModelsApi.new
-opts = { 
-  type: VeniceClient::Type.new # Type | 
+opts = {
+  type: VeniceClient::ListModelsTypeParameter.new # ListModelsTypeParameter | 
 }
 
 begin
-  #/api/v1/models
+  # /api/v1/models
   result = api_instance.list_models(opts)
   p result
 rescue VeniceClient::ApiError => e
-  puts "Exception when calling ModelsApi->list_models: #{e}"
+  puts "Error when calling ModelsApi->list_models: #{e}"
+end
+```
+
+#### Using the list_models_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ListModels200Response>, Integer, Hash)> list_models_with_http_info(opts)
+
+```ruby
+begin
+  # /api/v1/models
+  data, status_code, headers = api_instance.list_models_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ListModels200Response>
+rescue VeniceClient::ApiError => e
+  puts "Error when calling ModelsApi->list_models_with_http_info: #{e}"
 end
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | [**Type**](.md)|  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **type** | [**ListModelsTypeParameter**](.md) |  | [optional] |
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**ListModels200Response**](ListModels200Response.md)
 
 ### Authorization
 
@@ -153,8 +218,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
