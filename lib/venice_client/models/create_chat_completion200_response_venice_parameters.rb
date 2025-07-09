@@ -10,8 +10,8 @@ Generator version: 7.14.0
 
 =end
 
-require 'date'
-require 'time'
+require "date"
+require "time"
 
 module VeniceClient
   # Unique parameters to Venice's API implementation.
@@ -72,7 +72,7 @@ module VeniceClient
         :'character_slug' => :'character_slug',
         :'strip_thinking_response' => :'strip_thinking_response',
         :'disable_thinking' => :'disable_thinking',
-        :'web_search_citations' => :'web_search_citations'
+        :'web_search_citations' => :'web_search_citations',
       }
     end
 
@@ -96,14 +96,13 @@ module VeniceClient
         :'character_slug' => :'String',
         :'strip_thinking_response' => :'Boolean',
         :'disable_thinking' => :'Boolean',
-        :'web_search_citations' => :'Array<CreateChatCompletion200ResponseVeniceParametersWebSearchCitationsInner>'
+        :'web_search_citations' => :'Array<CreateChatCompletion200ResponseVeniceParametersWebSearchCitationsInner>',
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
-      Set.new([
-      ])
+      Set.new([])
     end
 
     # Initializes the object
@@ -172,7 +171,7 @@ module VeniceClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
+      warn "[DEPRECATED] the `list_invalid_properties` method is obsolete"
       invalid_properties = Array.new
       if @enable_web_search.nil?
         invalid_properties.push('invalid value for "enable_web_search", enable_web_search cannot be nil.')
@@ -204,9 +203,9 @@ module VeniceClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      warn '[DEPRECATED] the `valid?` method is obsolete'
+      warn "[DEPRECATED] the `valid?` method is obsolete"
       return false if @enable_web_search.nil?
-      enable_web_search_validator = EnumAttributeValidator.new('String', ["auto", "false", "true"])
+      enable_web_search_validator = EnumAttributeValidator.new("String", ["auto", "off", "on"])
       return false unless enable_web_search_validator.valid?(@enable_web_search)
       return false if @enable_web_citations.nil?
       return false if @include_venice_system_prompt.nil?
@@ -219,7 +218,7 @@ module VeniceClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] enable_web_search Object to be assigned
     def enable_web_search=(enable_web_search)
-      validator = EnumAttributeValidator.new('String', ["auto", "false", "true"])
+      validator = EnumAttributeValidator.new("String", ["auto", "off", "on"])
       unless validator.valid?(enable_web_search)
         fail ArgumentError, "invalid value for \"enable_web_search\", must be one of #{validator.allowable_values}."
       end
@@ -230,7 +229,7 @@ module VeniceClient
     # @param [Object] enable_web_citations Value to be assigned
     def enable_web_citations=(enable_web_citations)
       if enable_web_citations.nil?
-        fail ArgumentError, 'enable_web_citations cannot be nil'
+        fail ArgumentError, "enable_web_citations cannot be nil"
       end
 
       @enable_web_citations = enable_web_citations
@@ -240,7 +239,7 @@ module VeniceClient
     # @param [Object] include_venice_system_prompt Value to be assigned
     def include_venice_system_prompt=(include_venice_system_prompt)
       if include_venice_system_prompt.nil?
-        fail ArgumentError, 'include_venice_system_prompt cannot be nil'
+        fail ArgumentError, "include_venice_system_prompt cannot be nil"
       end
 
       @include_venice_system_prompt = include_venice_system_prompt
@@ -250,7 +249,7 @@ module VeniceClient
     # @param [Object] include_search_results_in_stream Value to be assigned
     def include_search_results_in_stream=(include_search_results_in_stream)
       if include_search_results_in_stream.nil?
-        fail ArgumentError, 'include_search_results_in_stream cannot be nil'
+        fail ArgumentError, "include_search_results_in_stream cannot be nil"
       end
 
       @include_search_results_in_stream = include_search_results_in_stream
@@ -260,7 +259,7 @@ module VeniceClient
     # @param [Object] strip_thinking_response Value to be assigned
     def strip_thinking_response=(strip_thinking_response)
       if strip_thinking_response.nil?
-        fail ArgumentError, 'strip_thinking_response cannot be nil'
+        fail ArgumentError, "strip_thinking_response cannot be nil"
       end
 
       @strip_thinking_response = strip_thinking_response
@@ -270,7 +269,7 @@ module VeniceClient
     # @param [Object] disable_thinking Value to be assigned
     def disable_thinking=(disable_thinking)
       if disable_thinking.nil?
-        fail ArgumentError, 'disable_thinking cannot be nil'
+        fail ArgumentError, "disable_thinking cannot be nil"
       end
 
       @disable_thinking = disable_thinking
@@ -281,14 +280,14 @@ module VeniceClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          enable_web_search == o.enable_web_search &&
-          enable_web_citations == o.enable_web_citations &&
-          include_venice_system_prompt == o.include_venice_system_prompt &&
-          include_search_results_in_stream == o.include_search_results_in_stream &&
-          character_slug == o.character_slug &&
-          strip_thinking_response == o.strip_thinking_response &&
-          disable_thinking == o.disable_thinking &&
-          web_search_citations == o.web_search_citations
+        enable_web_search == o.enable_web_search &&
+        enable_web_citations == o.enable_web_citations &&
+        include_venice_system_prompt == o.include_venice_system_prompt &&
+        include_search_results_in_stream == o.include_search_results_in_stream &&
+        character_slug == o.character_slug &&
+        strip_thinking_response == o.strip_thinking_response &&
+        disable_thinking == o.disable_thinking &&
+        web_search_citations == o.web_search_citations
     end
 
     # @see the `==` method
@@ -414,7 +413,5 @@ module VeniceClient
         value
       end
     end
-
   end
-
 end
