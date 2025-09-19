@@ -48,7 +48,7 @@ describe VeniceClient::ChatCompletionRequestVeniceParameters do
   describe 'test attribute "enable_web_search"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["auto", "false", "true"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["auto", "off", "on"])
       # validator.allowable_values.each do |value|
       #   expect { instance.enable_web_search = value }.not_to raise_error
       # end
