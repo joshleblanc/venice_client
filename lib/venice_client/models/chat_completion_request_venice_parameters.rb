@@ -141,7 +141,7 @@ module VeniceClient
       if attributes.key?(:'enable_web_search')
         self.enable_web_search = attributes[:'enable_web_search']
       else
-        self.enable_web_search = 'false'
+        self.enable_web_search = 'off'
       end
 
       if attributes.key?(:'enable_web_citations')
