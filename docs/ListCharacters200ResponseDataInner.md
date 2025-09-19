@@ -9,11 +9,13 @@
 | **description** | **String** | Description of the character |  |
 | **name** | **String** | Name of the character |  |
 | **share_url** | **String** | Share URL of the character |  |
+| **photo_url** | **String** | URL of the character photo |  |
 | **slug** | **String** | Slug of the character to be used in the completions API |  |
 | **stats** | [**ListCharacters200ResponseDataInnerStats**](ListCharacters200ResponseDataInnerStats.md) |  |  |
 | **tags** | **Array&lt;String&gt;** | Tags associated with the character |  |
 | **updated_at** | **String** | Date when the character was last updated |  |
 | **web_enabled** | **Boolean** | Whether the character is enabled for web use |  |
+| **model_id** | **String** | API model ID for the character |  |
 
 ## Example
 
@@ -26,11 +28,13 @@ instance = VeniceClient::ListCharacters200ResponseDataInner.new(
   description: Alan Watts (6 January 1915 – 16 November 1973) was a British and American writer, speaker, and self-styled &quot;philosophical entertainer&quot;, known for interpreting and popularizing Buddhist, Taoist, and Hindu philosophy for a Western audience.,
   name: Alan Watts,
   share_url: https://venice.ai/c/alan-watts,
+  photo_url: https://outerface.venice.ai/api/characters/2f460055-7595-4640-9cb6-c442c4c869b0/photo,
   slug: alan-watts,
   stats: null,
   tags: [&quot;AlanWatts&quot;,&quot;Philosophy&quot;,&quot;Buddhism&quot;,&quot;Taoist&quot;,&quot;Hindu&quot;],
   updated_at: 2025-02-09T03:23:53.708Z,
-  web_enabled: true
+  web_enabled: true,
+  model_id: venice-uncensored
 )
 ```
 

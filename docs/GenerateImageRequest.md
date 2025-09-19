@@ -15,9 +15,10 @@
 | **negative_prompt** | **String** | A description of what should not be in the image. Character limit is model specific and is listed in the promptCharacterLimit constraint in the model list endpoint. | [optional] |
 | **prompt** | **String** | The description for the image. Character limit is model specific and is listed in the promptCharacterLimit setting in the model list endpoint. |  |
 | **return_binary** | **Boolean** | Whether to return binary image data instead of base64. | [optional][default to false] |
+| **variants** | **Integer** | Number of images to generate (1–4). Only supported when return_binary is false. | [optional] |
 | **safe_mode** | **Boolean** | Whether to use safe mode. If enabled, this will blur images that are classified as having adult content. | [optional][default to true] |
 | **seed** | **Integer** | Random seed for generation. If not provided, a random seed will be used. | [optional][default to 0] |
-| **steps** | **Integer** | Number of inference steps. The following models have reduced max steps from the global max: venice-sd35: 30 max steps, hidream: 50 max steps, fluently-xl: 50 max steps, flux-dev: 30 max steps, flux-dev-uncensored-11: 30 max steps, flux-dev-uncensored: 30 max steps, lustify-sdxl: 50 max steps, pony-realism: 50 max steps, stable-diffusion-3.5: 30 max steps. These constraints are exposed in the model list endpoint for each model. | [optional][default to 20] |
+| **steps** | **Integer** | Number of inference steps. The following models have reduced max steps from the global max: venice-sd35: 30 max steps, hidream: 50 max steps, flux.1-krea: 30 max steps, flux-dev: 30 max steps, flux-dev-uncensored: 30 max steps, lustify-sdxl: 50 max steps, lustify-v7: 25 max steps, pony-realism: 50 max steps, qwen-image: 8 max steps, stable-diffusion-3.5: 30 max steps, wai-Illustrious: 30 max steps. These constraints are exposed in the model list endpoint for each model. | [optional][default to 20] |
 | **style_preset** | **String** | An image style to apply to the image. Visit https://docs.venice.ai/api-reference/endpoint/image/styles for more details. | [optional] |
 | **width** | **Integer** | Width of the generated image. Each model has a specific height and width divisor listed in the widthHeightDivisor constraint in the model list endpoint. | [optional][default to 1024] |
 
@@ -38,6 +39,7 @@ instance = VeniceClient::GenerateImageRequest.new(
   negative_prompt: Clouds, Rain, Snow,
   prompt: A beautiful sunset over a mountain range,
   return_binary: false,
+  variants: 3,
   safe_mode: false,
   seed: 123456789,
   steps: 20,

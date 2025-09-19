@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **content** | [**AssistantMessageContent**](AssistantMessageContent.md) |  |  |
+| **content** | [**AssistantMessageContent**](AssistantMessageContent.md) |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **reasoning_content** | **String** |  | [optional] |
 | **role** | **String** |  |  |

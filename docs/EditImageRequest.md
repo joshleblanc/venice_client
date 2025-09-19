@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **prompt** | **String** | The text directions to edit or modify the image. Does best with short but descriptive prompts. IE: \&quot;Change the color of\&quot;, \&quot;remove the object\&quot;, \&quot;change the sky to a sunrise\&quot;, etc. |  |
-| **image** | **String** |  |  |
+| **image** | [**EditImageRequestImage**](EditImageRequestImage.md) |  |  |
 
 ## Example
 

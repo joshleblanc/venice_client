@@ -8,6 +8,7 @@
 | **enable_web_citations** | **Boolean** | Did the request enable web citations? |  |
 | **include_venice_system_prompt** | **Boolean** | Did the request include the Venice system prompt? |  |
 | **include_search_results_in_stream** | **Boolean** | Did the request include search results in the stream? |  |
+| **return_search_results_as_documents** | **Boolean** | Did the request also return search results as a tool-call documents block? |  |
 | **character_slug** | **String** | The character slug of a public Venice character. | [optional] |
 | **strip_thinking_response** | **Boolean** | Did the request strip thinking response? |  |
 | **disable_thinking** | **Boolean** | Did the request disable thinking? |  |
@@ -23,6 +24,7 @@ instance = VeniceClient::CreateChatCompletion200ResponseVeniceParameters.new(
   enable_web_citations: true,
   include_venice_system_prompt: true,
   include_search_results_in_stream: false,
+  return_search_results_as_documents: true,
   character_slug: venice,
   strip_thinking_response: true,
   disable_thinking: true,

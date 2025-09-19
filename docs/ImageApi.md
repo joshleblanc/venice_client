@@ -32,7 +32,7 @@ end
 
 api_instance = VeniceClient::ImageApi.new
 opts = {
-  edit_image_request: VeniceClient::EditImageRequest.new({prompt: 'Change the color of the sky to a sunrise', image: 'image_example'}) # EditImageRequest | 
+  edit_image_request: VeniceClient::EditImageRequest.new({prompt: 'Change the color of the sky to a sunrise', image: VeniceClient::EditImageRequestImage.new}) # EditImageRequest | 
 }
 
 begin

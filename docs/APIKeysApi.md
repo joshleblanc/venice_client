@@ -6,6 +6,7 @@ All URIs are relative to *https://api.venice.ai/api/v1*
 | ------ | ------------ | ----------- |
 | [**create_api_key**](APIKeysApi.md#create_api_key) | **POST** /api_keys | /api/v1/api_keys |
 | [**delete_api_key**](APIKeysApi.md#delete_api_key) | **DELETE** /api_keys | /api/v1/api_keys |
+| [**get_api_key_by_id**](APIKeysApi.md#get_api_key_by_id) | **GET** /api_keys/{id} | Get API key details by ID |
 | [**get_api_key_generate_web3_key**](APIKeysApi.md#get_api_key_generate_web3_key) | **GET** /api_keys/generate_web3_key | /api/v1/api_keys/generate_web3_key |
 | [**get_api_key_rate_limit_logs**](APIKeysApi.md#get_api_key_rate_limit_logs) | **GET** /api_keys/rate_limits/log | /api/v1/api_keys/rate_limits/log |
 | [**get_api_key_rate_limits**](APIKeysApi.md#get_api_key_rate_limits) | **GET** /api_keys/rate_limits | /api/v1/api_keys/rate_limits |
@@ -144,6 +145,75 @@ end
 ### Return type
 
 [**DeleteApiKey200Response**](DeleteApiKey200Response.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_api_key_by_id
+
+> <GetApiKeyById200Response> get_api_key_by_id(id)
+
+Get API key details by ID
+
+Return details about a specific API key, including rate limits and balance data.
+
+### Examples
+
+```ruby
+require 'time'
+require 'venice_client'
+# setup authorization
+VeniceClient.configure do |config|
+  # Configure Bearer authorization (JWT): BearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = VeniceClient::APIKeysApi.new
+id = 'id_example' # String | The ID of the API key to retrieve
+
+begin
+  # Get API key details by ID
+  result = api_instance.get_api_key_by_id(id)
+  p result
+rescue VeniceClient::ApiError => e
+  puts "Error when calling APIKeysApi->get_api_key_by_id: #{e}"
+end
+```
+
+#### Using the get_api_key_by_id_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetApiKeyById200Response>, Integer, Hash)> get_api_key_by_id_with_http_info(id)
+
+```ruby
+begin
+  # Get API key details by ID
+  data, status_code, headers = api_instance.get_api_key_by_id_with_http_info(id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetApiKeyById200Response>
+rescue VeniceClient::ApiError => e
+  puts "Error when calling APIKeysApi->get_api_key_by_id_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | The ID of the API key to retrieve |  |
+
+### Return type
+
+[**GetApiKeyById200Response**](GetApiKeyById200Response.md)
 
 ### Authorization
 
