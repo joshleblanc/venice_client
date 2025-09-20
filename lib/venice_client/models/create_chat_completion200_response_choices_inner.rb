@@ -100,9 +100,9 @@ module VeniceClient
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
-        if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `VeniceClient::CreateChatCompletion200ResponseChoicesInner`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
-        end
+        # if (!acceptable_attribute_map.key?(k.to_sym))
+        #   fail ArgumentError, "`#{k}` is not a valid attribute in `VeniceClient::CreateChatCompletion200ResponseChoicesInner`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+        # end
         h[k.to_sym] = v
       }
 
@@ -192,9 +192,9 @@ module VeniceClient
     # Custom attribute writer method with validation
     # @param [Object] message Value to be assigned
     def message=(message)
-      # if message.nil?
-      #   fail ArgumentError, 'message cannot be nil'
-      # end
+      if message.nil?
+        fail ArgumentError, 'message cannot be nil'
+      end
 
       @message = message
     end

@@ -19,6 +19,11 @@ require 'json'
 describe 'ChatApi' do
   before do
     # run before each test
+    VeniceClient.configure do |config|
+      # Configure Bearer authorization: BearerAuth
+      config.access_token = ENV['VENICE_API_KEY'] || 'YOUR_API_KEY'
+      config.debugging = true
+    end
     @api_instance = VeniceClient::ChatApi.new
   end
 
@@ -54,12 +59,18 @@ describe 'ChatApi' do
         parallel_tool_calls: false
       )
 
-      # Make the API call
-      result = @api_instance.create_chat_completion(chat_completion_request: chat_completion_request)
+      begin
+        # Make the API call
+        result = @api_instance.create_chat_completion(chat_completion_request: chat_completion_request)
 
-      # Add assertions
-      expect(result).to be_instance_of(VeniceClient::CreateChatCompletion200Response)
-      expect(result.choices).not_to be_empty
+        # Add assertions
+        expect(result).to be_instance_of(VeniceClient::CreateChatCompletion200Response)
+        expect(result.choices).not_to be_empty
+      rescue VeniceClient::ApiError => e
+        puts "API Error: #{e.message}"
+        puts "Response body: #{e.response_body}"
+        fail e
+      end
     end
   end
 

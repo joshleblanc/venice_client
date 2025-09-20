@@ -99,9 +99,9 @@ module VeniceClient
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
-        if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `VeniceClient::AssistantMessage`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
-        end
+        # if (!acceptable_attribute_map.key?(k.to_sym))
+        #   fail ArgumentError, "`#{k}` is not a valid attribute in `VeniceClient::AssistantMessage`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+        # end
         h[k.to_sym] = v
       }
 
@@ -155,10 +155,10 @@ module VeniceClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] role Object to be assigned
     def role=(role)
-      validator = EnumAttributeValidator.new('String', ["assistant"])
-      unless validator.valid?(role)
-        fail ArgumentError, "invalid value for \"role\", must be one of #{validator.allowable_values}."
-      end
+      # validator = EnumAttributeValidator.new('String', ["assistant"])
+      # unless validator.valid?(role)
+      #   fail ArgumentError, "invalid value for \"role\", must be one of #{validator.allowable_values}."
+      # end
       @role = role
     end
 
