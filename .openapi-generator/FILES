@@ -256,11 +256,5 @@ lib/venice_client/models/upscale_image_request_enhance.rb
 lib/venice_client/models/user_message.rb
 lib/venice_client/models/user_message_content.rb
 lib/venice_client/version.rb
-spec/models/detailed_error_spec.rb
-spec/models/edit_image_request_image_spec.rb
-spec/models/get_api_key_by_id200_response_data_spec.rb
-spec/models/get_api_key_by_id200_response_spec.rb
-spec/models/get_character_by_slug200_response_spec.rb
-spec/models/standard_error_spec.rb
 spec/spec_helper.rb
 venice_client.gemspec
