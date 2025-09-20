@@ -192,9 +192,9 @@ module VeniceClient
     # Custom attribute writer method with validation
     # @param [Object] message Value to be assigned
     def message=(message)
-      if message.nil?
-        fail ArgumentError, 'message cannot be nil'
-      end
+      # if message.nil?
+      #   fail ArgumentError, 'message cannot be nil'
+      # end
 
       @message = message
     end

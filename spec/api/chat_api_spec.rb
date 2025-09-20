@@ -40,8 +40,26 @@ describe 'ChatApi' do
   # @option opts [ChatCompletionRequest] :chat_completion_request 
   # @return [CreateChatCompletion200Response]
   describe 'create_chat_completion test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    it 'should work with venice-uncensored model' do
+      # Create a user message
+      user_message = VeniceClient::UserMessage.new(
+        role: 'user',
+        content: 'Hello, world!'
+      )
+
+      # Create the chat completion request
+      chat_completion_request = VeniceClient::ChatCompletionRequest.new(
+        model: 'venice-uncensored',
+        messages: [user_message],
+        parallel_tool_calls: false
+      )
+
+      # Make the API call
+      result = @api_instance.create_chat_completion(chat_completion_request: chat_completion_request)
+
+      # Add assertions
+      expect(result).to be_instance_of(VeniceClient::CreateChatCompletion200Response)
+      expect(result.choices).not_to be_empty
     end
   end
 
