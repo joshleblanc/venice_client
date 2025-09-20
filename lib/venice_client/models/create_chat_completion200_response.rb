@@ -36,6 +36,8 @@ module VeniceClient
 
     attr_accessor :venice_parameters
 
+    attr_accessor :additional_properties
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -110,14 +112,18 @@ module VeniceClient
         fail ArgumentError, "The input argument (attributes) must be a hash in `VeniceClient::CreateChatCompletion200Response` initialize method"
       end
 
+      @additional_properties = {}
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
-      attributes = attributes.each_with_object({}) { |(k, v), h|
-        if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `VeniceClient::CreateChatCompletion200Response`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+      new_attributes = {}
+      attributes.each do |k, v|
+        if (acceptable_attribute_map.key?(k.to_sym))
+          new_attributes[k.to_sym] = v
+        else
+          @additional_properties[k.to_sym] = v
         end
-        h[k.to_sym] = v
-      }
+      end
+      attributes = new_attributes
 
       if attributes.key?(:'choices')
         if (value = attributes[:'choices']).is_a?(Array)
@@ -287,7 +293,8 @@ module VeniceClient
           object == o.object &&
           prompt_logprobs == o.prompt_logprobs &&
           usage == o.usage &&
-          venice_parameters == o.venice_parameters
+          venice_parameters == o.venice_parameters &&
+          additional_properties == o.additional_properties
     end
 
     # @see the `==` method
@@ -299,7 +306,7 @@ module VeniceClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [choices, created, id, model, object, prompt_logprobs, usage, venice_parameters].hash
+      [choices, created, id, model, object, prompt_logprobs, usage, venice_parameters, additional_properties].hash
     end
 
     # Builds the object from hash
@@ -350,10 +357,10 @@ module VeniceClient
       when :Object
         # generic object (usually a Hash), return directly
         value
-      when /\AArray<(?<inner_type>.+)>\z/
+      when /\AArray<(?<inner_type>.+)>/i
         inner_type = Regexp.last_match[:inner_type]
         value.map { |v| _deserialize(inner_type, v) }
-      when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
+      when /\AHash<(?<k_type>.+?), (?<v_type>.+)>/i
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
         {}.tap do |hash|
@@ -393,7 +400,7 @@ module VeniceClient
 
         hash[param] = _to_hash(value)
       end
-      hash.merge!(@additional_properties)
+      hash.merge!(@additional_properties || {})
       hash
     end
 
