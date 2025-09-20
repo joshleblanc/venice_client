@@ -393,6 +393,7 @@ module VeniceClient
 
         hash[param] = _to_hash(value)
       end
+      hash.merge!(@additional_properties)
       hash
     end
 
