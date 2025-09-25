@@ -174,7 +174,7 @@ module VeniceClient
     def finish_reason=(finish_reason)
       validator = EnumAttributeValidator.new('String', ["tool_call", "stop", "length"])
       unless validator.valid?(finish_reason)
-        fail ArgumentError, "invalid value for \"finish_reason\", must be one of #{validator.allowable_values}."
+        fail ArgumentError, "invalid value for \"finish_reason\", must be one of #{validator.allowable_values}. Was #{finish_reason}"
       end
       @finish_reason = finish_reason
     end
