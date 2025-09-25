@@ -11,5 +11,5 @@ Generator version: 7.14.0
 =end
 
 module VeniceClient
-  VERSION = '1.0.19'
+  VERSION = '1.0.20'
 end
