@@ -202,7 +202,7 @@ module VeniceClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] stop_reason Object to be assigned
     def stop_reason=(stop_reason)
-      validator = EnumAttributeValidator.new('String', ["stop", "length"])
+      validator = EnumAttributeValidator.new('String', ["tool_call", "stop", "length"])
       unless validator.valid?(stop_reason)
         fail ArgumentError, "invalid value for \"stop_reason\", must be one of #{validator.allowable_values}."
       end
