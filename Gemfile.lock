@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    venice_client (1.0.17)
+    venice_client (1.0.18)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM
