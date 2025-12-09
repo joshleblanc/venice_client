@@ -18,4 +18,5 @@ find lib -type f -name "*.rb" -exec sed -i -f - {} + <<SED_SCRIPT
 s/\["auto", "false", "true"\]/\["auto", "off", "on"\]/g
 s/self.enable_web_search = 'on'/self.enable_web_search = 'off'/g
 s/self.enable_web_search = 'false'/self.enable_web_search = 'off'/g
+s/\["stop", "length"\]/\["stop", "length", "tool_calls"\]/g
 SED_SCRIPT

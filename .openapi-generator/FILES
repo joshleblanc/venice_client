@@ -278,16 +278,5 @@ lib/venice_client/models/user_message.rb
 lib/venice_client/models/user_message_content.rb
 lib/venice_client/models/video_model_constraints.rb
 lib/venice_client/version.rb
-spec/api/video_api_spec.rb
-spec/models/cache_control_spec.rb
-spec/models/chat_completion_request_reasoning_spec.rb
-spec/models/complete_video200_response_spec.rb
-spec/models/complete_video_request_spec.rb
-spec/models/queue_video200_response_spec.rb
-spec/models/queue_video_request_spec.rb
-spec/models/quote_video200_response_spec.rb
-spec/models/retrieve_video200_response_spec.rb
-spec/models/retrieve_video_request_spec.rb
-spec/models/video_model_constraints_spec.rb
 spec/spec_helper.rb
 venice_client.gemspec

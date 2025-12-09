@@ -160,11 +160,11 @@ module VeniceClient
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @finish_reason.nil?
-      finish_reason_validator = EnumAttributeValidator.new('String', ["stop", "length"])
+      finish_reason_validator = EnumAttributeValidator.new('String', ["stop", "length", "tool_calls"])
       return false unless finish_reason_validator.valid?(@finish_reason)
       return false if @index.nil?
       return false if @message.nil?
-      stop_reason_validator = EnumAttributeValidator.new('String', ["stop", "length"])
+      stop_reason_validator = EnumAttributeValidator.new('String', ["stop", "length", "tool_calls"])
       return false unless stop_reason_validator.valid?(@stop_reason)
       true
     end
@@ -172,7 +172,7 @@ module VeniceClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] finish_reason Object to be assigned
     def finish_reason=(finish_reason)
-      validator = EnumAttributeValidator.new('String', ["stop", "length"])
+      validator = EnumAttributeValidator.new('String', ["stop", "length", "tool_calls"])
       unless validator.valid?(finish_reason)
         fail ArgumentError, "invalid value for \"finish_reason\", must be one of #{validator.allowable_values}."
       end
@@ -202,7 +202,7 @@ module VeniceClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] stop_reason Object to be assigned
     def stop_reason=(stop_reason)
-      validator = EnumAttributeValidator.new('String', ["stop", "length"])
+      validator = EnumAttributeValidator.new('String', ["stop", "length", "tool_calls"])
       unless validator.valid?(stop_reason)
         fail ArgumentError, "invalid value for \"stop_reason\", must be one of #{validator.allowable_values}."
       end
