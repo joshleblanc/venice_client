@@ -30,7 +30,7 @@ end
 
 api_instance = VeniceClient::ModelsApi.new
 opts = {
-  type: 'embedding' # String | 
+  type: 'asr' # String | 
 }
 
 begin
@@ -101,7 +101,7 @@ end
 
 api_instance = VeniceClient::ModelsApi.new
 opts = {
-  type: 'embedding' # String | 
+  type: 'asr' # String | 
 }
 
 begin

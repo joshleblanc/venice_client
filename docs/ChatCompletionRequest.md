@@ -16,7 +16,10 @@
 | **model** | **String** | The ID of the model you wish to prompt. May also be a model trait, or a model compatibility mapping. See the models endpoint for a list of models available to you. You can use feature suffixes to enable features from the venice_parameters object. Please see \&quot;Model Feature Suffix\&quot; documentation for more details. |  |
 | **n** | **Integer** | How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep n as 1 to minimize costs. | [optional][default to 1] |
 | **presence_penalty** | **Float** | Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model&#39;s likelihood to talk about new topics. | [optional][default to 0] |
+| **prompt_cache_key** | **String** | When supplied, this field may be used to optimize conversation routing to improve cache performance and thus reduce latency. | [optional] |
 | **repetition_penalty** | **Float** | The parameter for repetition penalty. 1.0 means no penalty. Values &gt; 1.0 discourage repetition. | [optional] |
+| **reasoning** | [**ChatCompletionRequestReasoning**](ChatCompletionRequestReasoning.md) |  | [optional] |
+| **reasoning_effort** | **String** | OpenAI-compatible parameter to control reasoning effort level for supported models. Takes precedence over reasoning.effort if both are provided. | [optional] |
 | **seed** | **Integer** | The random seed used to generate the response. This is useful for reproducibility. | [optional] |
 | **stop** | [**ChatCompletionRequestStop**](ChatCompletionRequestStop.md) |  | [optional] |
 | **stop_token_ids** | **Array&lt;Float&gt;** | Array of token IDs where the API will stop generating further tokens. | [optional] |
@@ -47,10 +50,13 @@ instance = VeniceClient::ChatCompletionRequest.new(
   messages: null,
   min_p: 0.05,
   min_temp: 0.1,
-  model: venice-uncensored,
+  model: zai-org-glm-4.6,
   n: null,
   presence_penalty: null,
+  prompt_cache_key: random-string,
   repetition_penalty: 1.2,
+  reasoning: null,
+  reasoning_effort: medium,
   seed: 42,
   stop: null,
   stop_token_ids: [151643,151645],

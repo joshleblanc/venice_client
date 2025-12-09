@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **enable_web_search** | **String** | Did the request enable web search? |  |
 | **enable_web_citations** | **Boolean** | Did the request enable web citations? |  |
+| **enable_web_scraping** | **Boolean** | Did the request enable web scraping of URLs via Firecrawl? |  |
 | **include_venice_system_prompt** | **Boolean** | Did the request include the Venice system prompt? |  |
 | **include_search_results_in_stream** | **Boolean** | Did the request include search results in the stream? |  |
 | **return_search_results_as_documents** | **Boolean** | Did the request also return search results as a tool-call documents block? |  |
@@ -22,6 +23,7 @@ require 'venice_client'
 instance = VeniceClient::CreateChatCompletion200ResponseVeniceParameters.new(
   enable_web_search: auto,
   enable_web_citations: true,
+  enable_web_scraping: false,
   include_venice_system_prompt: true,
   include_search_results_in_stream: false,
   return_search_results_as_documents: true,

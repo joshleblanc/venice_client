@@ -104,7 +104,7 @@ end
 api_instance = VeniceClient::ImageApi.new
 opts = {
   accept_encoding: 'gzip, br', # String | Supported compression encodings (gzip, br). Only applied when return_binary is false.
-  generate_image_request: VeniceClient::GenerateImageRequest.new({model: 'hidream', prompt: 'A beautiful sunset over a mountain range'}) # GenerateImageRequest | 
+  generate_image_request: VeniceClient::GenerateImageRequest.new({model: 'z-image-turbo', prompt: 'A beautiful sunset over a mountain range'}) # GenerateImageRequest | 
 }
 
 begin

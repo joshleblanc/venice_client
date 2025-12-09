@@ -24,7 +24,7 @@ require 'venice_client'
 
 instance = VeniceClient::SimpleGenerateImageRequest.new(
   background: auto,
-  model: hidream,
+  model: z-image-turbo,
   moderation: auto,
   n: 1,
   output_compression: null,

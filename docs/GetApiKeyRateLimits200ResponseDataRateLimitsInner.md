@@ -13,7 +13,7 @@
 require 'venice_client'
 
 instance = VeniceClient::GetApiKeyRateLimits200ResponseDataRateLimitsInner.new(
-  api_model_id: venice-uncensored,
+  api_model_id: zai-org-glm-4.6,
   rate_limits: null
 )
 ```

@@ -18,8 +18,11 @@
 | **variants** | **Integer** | Number of images to generate (1–4). Only supported when return_binary is false. | [optional] |
 | **safe_mode** | **Boolean** | Whether to use safe mode. If enabled, this will blur images that are classified as having adult content. | [optional][default to true] |
 | **seed** | **Integer** | Random seed for generation. If not provided, a random seed will be used. | [optional][default to 0] |
-| **steps** | **Integer** | Number of inference steps. The following models have reduced max steps from the global max: venice-sd35: 30 max steps, hidream: 50 max steps, flux.1-krea: 30 max steps, flux-dev: 30 max steps, flux-dev-uncensored: 30 max steps, lustify-sdxl: 50 max steps, lustify-v7: 25 max steps, pony-realism: 50 max steps, qwen-image: 8 max steps, stable-diffusion-3.5: 30 max steps, wai-Illustrious: 30 max steps. These constraints are exposed in the model list endpoint for each model. | [optional][default to 20] |
+| **steps** | **Integer** | Number of inference steps. This model does not support steps - this field is ignored. | [optional][default to 0] |
 | **style_preset** | **String** | An image style to apply to the image. Visit https://docs.venice.ai/api-reference/endpoint/image/styles for more details. | [optional] |
+| **aspect_ratio** | **String** | Aspect ratio (utilized by certain image models including Nano Banana). Examples: \&quot;1:1\&quot;, \&quot;16:9\&quot;. | [optional] |
+| **resolution** | **String** | Resolution (utilized by certain image models including Nano Banana). Examples: \&quot;1024x1024\&quot;, \&quot;512x512\&quot;. | [optional] |
+| **enable_web_search** | **Boolean** | Enable web search for the image generation task. This will allow the model to use the latest information from the web to generate the image. Only supported by certain models. If web search is used, additional credits are getting charged. | [optional] |
 | **width** | **Integer** | Width of the generated image. Each model has a specific height and width divisor listed in the widthHeightDivisor constraint in the model list endpoint. | [optional][default to 1024] |
 
 ## Example
@@ -35,15 +38,18 @@ instance = VeniceClient::GenerateImageRequest.new(
   hide_watermark: false,
   inpaint: null,
   lora_strength: 50,
-  model: hidream,
+  model: z-image-turbo,
   negative_prompt: Clouds, Rain, Snow,
   prompt: A beautiful sunset over a mountain range,
   return_binary: false,
   variants: 3,
   safe_mode: false,
   seed: 123456789,
-  steps: 20,
+  steps: 0,
   style_preset: 3D Model,
+  aspect_ratio: 61,
+  resolution: 1024x1024,
+  enable_web_search: false,
   width: 1024
 )
 ```

@@ -29,7 +29,7 @@ end
 api_instance = VeniceClient::ChatApi.new
 opts = {
   accept_encoding: 'gzip, br', # String | Supported compression encodings (gzip, br). Only applied when stream is false.
-  chat_completion_request: VeniceClient::ChatCompletionRequest.new({messages: [VeniceClient::ChatCompletionRequestMessagesInner.new({content: VeniceClient::SystemMessageContent.new, role: 'system', tool_call_id: 'tool_call_id_example'})], model: 'venice-uncensored'}) # ChatCompletionRequest | 
+  chat_completion_request: VeniceClient::ChatCompletionRequest.new({messages: [VeniceClient::ChatCompletionRequestMessagesInner.new({content: VeniceClient::SystemMessageContent.new, role: 'system', tool_call_id: 'tool_call_id_example'})], model: 'zai-org-glm-4.6'}) # ChatCompletionRequest | 
 }
 
 begin

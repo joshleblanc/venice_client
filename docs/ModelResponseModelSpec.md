@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **available_context_tokens** | **Float** | The context length supported by the model. Only applicable for text models. | [optional] |
 | **beta** | **Boolean** | Is this model in beta? | [optional] |
+| **privacy** | **String** | The privacy mode of the model. Private models have zero data retention. Anonymized models Venice can not guarantee privacy on, but requests are not affiliated with a user | [optional] |
 | **capabilities** | [**ModelResponseModelSpecCapabilities**](ModelResponseModelSpecCapabilities.md) |  | [optional] |
 | **constraints** | [**ModelResponseModelSpecConstraints**](ModelResponseModelSpecConstraints.md) |  | [optional] |
 | **name** | **String** | The name of the model. | [optional] |
@@ -23,6 +24,7 @@ require 'venice_client'
 instance = VeniceClient::ModelResponseModelSpec.new(
   available_context_tokens: 32768,
   beta: false,
+  privacy: private,
   capabilities: null,
   constraints: null,
   name: Venice Uncensored 1.1,
