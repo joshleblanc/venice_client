@@ -20,3 +20,11 @@ s/self.enable_web_search = 'on'/self.enable_web_search = 'off'/g
 s/self.enable_web_search = 'false'/self.enable_web_search = 'off'/g
 s/\["stop", "length"\]/\["stop", "length", "tool_calls"\]/g
 SED_SCRIPT
+
+# Fix binary content type handling in api_client.rb (video/mp4, audio/*, etc.)
+sed -i "/fail \"Content-Type is not supported/i\\
+      # Return raw body for binary content types (video, audio, etc.)\\
+      if content_type.start_with?('video/') || content_type.start_with?('audio/') || content_type == 'application/octet-stream'\\
+        return body\\
+      end\\
+" lib/venice_client/api_client.rb

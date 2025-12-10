@@ -228,6 +228,11 @@ module VeniceClient
       # ensuring a default content type
       content_type = response.headers['Content-Type'] || 'application/json'
 
+      # Return raw body for binary content types (video, audio, etc.)
+      if content_type.start_with?('video/') || content_type.start_with?('audio/') || content_type == 'application/octet-stream'
+        return body
+      end
+
       fail "Content-Type is not supported: #{content_type}" unless json_mime?(content_type)
 
       begin
