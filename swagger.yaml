@@ -5,7 +5,7 @@ info:
   description: The Venice.ai API.
   termsOfService: https://venice.ai/legal/tos
   title: Venice.ai API
-  version: "20251209.153516"
+  version: "20251218.042551"
 openapi: 3.0.0
 security:
   - BearerAuth: []
@@ -13,7 +13,8 @@ servers:
   - url: https://api.venice.ai/api/v1
 tags:
   - description: Given a list of messages comprising a conversation, the model will
-      return a response.
+      return a response. Supports multimodal inputs including text, images,
+      audio (input_audio), and video (video_url) for compatible models.
     name: Chat
   - description: List and describe the various models available in the API.
     name: Models
@@ -143,7 +144,6 @@ components:
                               required:
                                 - text
                                 - type
-                              additionalProperties: false
                               description: Text message type. Supports optional cache_control for prompt
                                 caching on supported providers.
                               example:
@@ -193,11 +193,129 @@ components:
                               required:
                                 - image_url
                                 - type
-                              additionalProperties: false
                               description: Image URL message type. Supports optional cache_control for prompt
                                 caching on supported providers.
                               title: image_url
+                            - type: object
+                              properties:
+                                cache_control:
+                                  type: object
+                                  properties:
+                                    ttl:
+                                      type: string
+                                      description: Optional TTL for extended cache duration. Beta feature requiring
+                                        special header.
+                                      example: 1h
+                                    type:
+                                      type: string
+                                      enum:
+                                        - ephemeral
+                                      description: The type of cache control. Currently only "ephemeral" is supported.
+                                      example: ephemeral
+                                  required:
+                                    - type
+                                  description: Optional cache control for prompt caching on supported providers.
+                                  example:
+                                    type: ephemeral
+                                  title: Cache Control
+                                input_audio:
+                                  type: object
+                                  properties:
+                                    data:
+                                      type: string
+                                      description: Base64-encoded audio data. Direct URLs are not supported for audio
+                                        content.
+                                    format:
+                                      type: string
+                                      enum:
+                                        - wav
+                                        - mp3
+                                        - aiff
+                                        - aac
+                                        - ogg
+                                        - flac
+                                        - m4a
+                                        - pcm16
+                                        - pcm24
+                                      default: wav
+                                      description: The format of the audio file. Common formats include wav, mp3, aac,
+                                        ogg, flac, m4a. Defaults to wav.
+                                      example: wav
+                                  required:
+                                    - data
+                                  description: Object containing the base64-encoded audio data and format
+                                  title: Input Audio Object
+                                type:
+                                  type: string
+                                  enum:
+                                    - input_audio
+                              required:
+                                - input_audio
+                                - type
+                              description: Audio input message type for models that support audio analysis.
+                                Audio must be base64-encoded.
+                              example:
+                                input_audio:
+                                  data: <base64-encoded-audio>
+                                  format: wav
+                                type: input_audio
+                              title: input_audio
+                            - type: object
+                              properties:
+                                cache_control:
+                                  type: object
+                                  properties:
+                                    ttl:
+                                      type: string
+                                      description: Optional TTL for extended cache duration. Beta feature requiring
+                                        special header.
+                                      example: 1h
+                                    type:
+                                      type: string
+                                      enum:
+                                        - ephemeral
+                                      description: The type of cache control. Currently only "ephemeral" is supported.
+                                      example: ephemeral
+                                  required:
+                                    - type
+                                  description: Optional cache control for prompt caching on supported providers.
+                                  example:
+                                    type: ephemeral
+                                  title: Cache Control
+                                type:
+                                  type: string
+                                  enum:
+                                    - video_url
+                                video_url:
+                                  type: object
+                                  properties:
+                                    url:
+                                      type: string
+                                      description: "The URL of the video. Can be a direct URL (including YouTube links
+                                        for some providers), or a base64-encoded
+                                        data URL (e.g.,
+                                        data:video/mp4;base64,...). Supported
+                                        formats: mp4, mpeg, mov, webm."
+                                      format: uri
+                                  required:
+                                    - url
+                                  description: Object containing the video URL information
+                                  title: Video URL Object
+                              required:
+                                - type
+                                - video_url
+                              description: Video URL message type for models that support video analysis.
+                                Supports both direct URLs and base64-encoded
+                                data URLs.
+                              example:
+                                type: video_url
+                                video_url:
+                                  url: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+                              title: video_url
                         title: Objects
+                  name:
+                    type: string
+                    nullable: true
                   role:
                     type: string
                     enum:
@@ -253,7 +371,6 @@ components:
                           required:
                             - text
                             - type
-                          additionalProperties: false
                           description: Text message type. Supports optional cache_control for prompt
                             caching on supported providers.
                           example:
@@ -265,9 +382,35 @@ components:
                         title: "null"
                   name:
                     type: string
+                    nullable: true
                   reasoning_content:
                     type: string
                     nullable: true
+                  reasoning_details:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        data:
+                          type: string
+                        format:
+                          type: string
+                        id:
+                          type: string
+                        index:
+                          type: number
+                        text:
+                          type: string
+                        type:
+                          type: string
+                      required:
+                        - type
+                    description: Reasoning details returned by certain reasoning models that support
+                      this feature (e.g., Gemini 3 Pro). Not all reasoning
+                      models return this field. For multi-turn conversations
+                      with tool calls on supported models, pass back the
+                      reasoning_details exactly as received to preserve thought
+                      signatures.
                   role:
                     type: string
                     enum:
@@ -288,6 +431,7 @@ components:
                     type: string
                   name:
                     type: string
+                    nullable: true
                   reasoning_content:
                     type: string
                     nullable: true
@@ -355,7 +499,6 @@ components:
                           required:
                             - text
                             - type
-                          additionalProperties: false
                           description: Text message type. Supports optional cache_control for prompt
                             caching on supported providers.
                           example:
@@ -365,6 +508,7 @@ components:
                         title: Objects
                   name:
                     type: string
+                    nullable: true
                   role:
                     type: string
                     enum:
@@ -646,13 +790,11 @@ components:
                       type: string
                   required:
                     - name
-                  additionalProperties: false
                 type:
                   type: string
               required:
                 - function
                 - type
-              additionalProperties: false
             - type: string
         tools:
           type: array
@@ -680,7 +822,6 @@ components:
                     example: false
                 required:
                   - name
-                additionalProperties: false
               id:
                 type: string
               type:
@@ -697,6 +838,122 @@ components:
         - messages
         - model
       additionalProperties: false
+    ChatCompletionContentPartInputAudio:
+      type: object
+      properties:
+        cache_control:
+          type: object
+          properties:
+            ttl:
+              type: string
+              description: Optional TTL for extended cache duration. Beta feature requiring
+                special header.
+              example: 1h
+            type:
+              type: string
+              enum:
+                - ephemeral
+              description: The type of cache control. Currently only "ephemeral" is supported.
+              example: ephemeral
+          required:
+            - type
+          description: Optional cache control for prompt caching on supported providers.
+          example:
+            type: ephemeral
+          title: Cache Control
+        input_audio:
+          type: object
+          properties:
+            data:
+              type: string
+              description: Base64-encoded audio data. Direct URLs are not supported for audio
+                content.
+            format:
+              type: string
+              enum:
+                - wav
+                - mp3
+                - aiff
+                - aac
+                - ogg
+                - flac
+                - m4a
+                - pcm16
+                - pcm24
+              default: wav
+              description: The format of the audio file. Common formats include wav, mp3, aac,
+                ogg, flac, m4a. Defaults to wav.
+              example: wav
+          required:
+            - data
+          description: Object containing the base64-encoded audio data and format
+          title: Input Audio Object
+        type:
+          type: string
+          enum:
+            - input_audio
+      required:
+        - input_audio
+        - type
+      description: Audio input message type for models that support audio analysis.
+        Audio must be base64-encoded.
+      example:
+        input_audio:
+          data: <base64-encoded-audio>
+          format: wav
+        type: input_audio
+      title: input_audio
+    ChatCompletionContentPartVideoUrl:
+      type: object
+      properties:
+        cache_control:
+          type: object
+          properties:
+            ttl:
+              type: string
+              description: Optional TTL for extended cache duration. Beta feature requiring
+                special header.
+              example: 1h
+            type:
+              type: string
+              enum:
+                - ephemeral
+              description: The type of cache control. Currently only "ephemeral" is supported.
+              example: ephemeral
+          required:
+            - type
+          description: Optional cache control for prompt caching on supported providers.
+          example:
+            type: ephemeral
+          title: Cache Control
+        type:
+          type: string
+          enum:
+            - video_url
+        video_url:
+          type: object
+          properties:
+            url:
+              type: string
+              description: "The URL of the video. Can be a direct URL (including YouTube links
+                for some providers), or a base64-encoded data URL (e.g.,
+                data:video/mp4;base64,...). Supported formats: mp4, mpeg, mov,
+                webm."
+              format: uri
+          required:
+            - url
+          description: Object containing the video URL information
+          title: Video URL Object
+      required:
+        - type
+        - video_url
+      description: Video URL message type for models that support video analysis.
+        Supports both direct URLs and base64-encoded data URLs.
+      example:
+        type: video_url
+        video_url:
+          url: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+      title: video_url
     GenerateImageRequest:
       type: object
       properties:
@@ -816,8 +1073,8 @@ components:
         resolution:
           type: string
           description: 'Resolution (utilized by certain image models including Nano
-            Banana). Examples: "1024x1024", "512x512".'
-          example: 1024x1024
+            Banana). Examples: "1K", "2K", "4K".'
+          example: 1K
         enable_web_search:
           type: boolean
           description: Enable web search for the image generation task. This will allow
@@ -1962,7 +2219,9 @@ components:
 paths:
   /chat/completions:
     post:
-      description: Run text inference based on the supplied parameters. Long running
+      description: Run text inference based on the supplied parameters. Supports
+        multimodal inputs including text, images (image_url), audio
+        (input_audio), and video (video_url) for compatible models. Long running
         requests should use the streaming API by setting stream=true in your
         request.
       operationId: createChatCompletion
@@ -2105,7 +2364,6 @@ paths:
                                         required:
                                           - text
                                           - type
-                                        additionalProperties: false
                                         description: Text message type. Supports optional cache_control for prompt
                                           caching on supported providers.
                                         example:
@@ -2117,9 +2375,36 @@ paths:
                                       title: "null"
                                 name:
                                   type: string
+                                  nullable: true
                                 reasoning_content:
                                   type: string
                                   nullable: true
+                                reasoning_details:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      data:
+                                        type: string
+                                      format:
+                                        type: string
+                                      id:
+                                        type: string
+                                      index:
+                                        type: number
+                                      text:
+                                        type: string
+                                      type:
+                                        type: string
+                                    required:
+                                      - type
+                                  description: Reasoning details returned by certain reasoning models that support
+                                    this feature (e.g., Gemini 3 Pro). Not all
+                                    reasoning models return this field. For
+                                    multi-turn conversations with tool calls on
+                                    supported models, pass back the
+                                    reasoning_details exactly as received to
+                                    preserve thought signatures.
                                 role:
                                   type: string
                                   enum:
@@ -2140,6 +2425,7 @@ paths:
                                   type: string
                                 name:
                                   type: string
+                                  nullable: true
                                 reasoning_content:
                                   type: string
                                   nullable: true
@@ -2176,7 +2462,8 @@ paths:
                         - logprobs
                         - message
                     description: A list of chat completion choices. Can be more than one if n is
-                      greater than 1.
+                      greater than 1. Certain models may not return this field
+                      under certain conditions.
                     example:
                       - finish_reason: stop
                         index: 0
@@ -2387,7 +2674,6 @@ paths:
                       - disable_thinking
                     description: Unique parameters to Venice's API implementation.
                 required:
-                  - choices
                   - created
                   - id
                   - model
@@ -4844,6 +5130,12 @@ paths:
                 $ref: "#/components/schemas/StandardError"
         "500":
           description: Inference processing failed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StandardError"
+        "503":
+          description: The model is at capacity. Please try again later.
           content:
             application/json:
               schema:

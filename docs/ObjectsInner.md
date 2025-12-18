@@ -15,7 +15,9 @@ VeniceClient::ObjectsInner.openapi_one_of
 # =>
 # [
 #   :'ImageUrl',
-#   :'Text'
+#   :'InputAudio',
+#   :'Text',
+#   :'VideoUrl'
 # ]
 ```
 
@@ -44,6 +46,8 @@ VeniceClient::ObjectsInner.build(data_that_doesnt_match)
 #### Return type
 
 - `ImageUrl`
+- `InputAudio`
 - `Text`
+- `VideoUrl`
 - `nil` (if no type matches)
 

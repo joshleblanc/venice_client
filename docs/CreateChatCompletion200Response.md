@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **choices** | [**Array&lt;CreateChatCompletion200ResponseChoicesInner&gt;**](CreateChatCompletion200ResponseChoicesInner.md) | A list of chat completion choices. Can be more than one if n is greater than 1. |  |
+| **choices** | [**Array&lt;CreateChatCompletion200ResponseChoicesInner&gt;**](CreateChatCompletion200ResponseChoicesInner.md) | A list of chat completion choices. Can be more than one if n is greater than 1. Certain models may not return this field under certain conditions. | [optional] |
 | **created** | **Integer** | The time at which the request was created. |  |
 | **id** | **String** | The ID of the request. |  |
 | **model** | **String** | The model id used for the request. |  |

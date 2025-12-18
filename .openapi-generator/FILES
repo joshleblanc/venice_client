@@ -9,6 +9,7 @@ Rakefile
 docs/APIKeysApi.md
 docs/AssistantMessage.md
 docs/AssistantMessageContent.md
+docs/AssistantMessageReasoningDetailsInner.md
 docs/AudioApi.md
 docs/AudioModelPricing.md
 docs/AudioModelPricingInput.md
@@ -18,6 +19,8 @@ docs/BillingUsageResponse.md
 docs/CacheControl.md
 docs/CharactersApi.md
 docs/ChatApi.md
+docs/ChatCompletionContentPartInputAudio.md
+docs/ChatCompletionContentPartVideoUrl.md
 docs/ChatCompletionRequest.md
 docs/ChatCompletionRequestMessagesInner.md
 docs/ChatCompletionRequestReasoning.md
@@ -90,6 +93,8 @@ docs/ImageModelPricingUpscale4x.md
 docs/ImageStylesGet200Response.md
 docs/ImageURLObject.md
 docs/ImageUrl.md
+docs/InputAudio.md
+docs/InputAudioObject.md
 docs/JsonObject.md
 docs/JsonSchema.md
 docs/LLMModelPricing.md
@@ -139,6 +144,8 @@ docs/UserMessage.md
 docs/UserMessageContent.md
 docs/VideoApi.md
 docs/VideoModelConstraints.md
+docs/VideoURLObject.md
+docs/VideoUrl.md
 git_push.sh
 lib/venice_client.rb
 lib/venice_client/api/api_keys_api.rb
@@ -157,11 +164,14 @@ lib/venice_client/api_error.rb
 lib/venice_client/configuration.rb
 lib/venice_client/models/assistant_message.rb
 lib/venice_client/models/assistant_message_content.rb
+lib/venice_client/models/assistant_message_reasoning_details_inner.rb
 lib/venice_client/models/audio_model_pricing.rb
 lib/venice_client/models/audio_model_pricing_input.rb
 lib/venice_client/models/billing_usage_request.rb
 lib/venice_client/models/billing_usage_response.rb
 lib/venice_client/models/cache_control.rb
+lib/venice_client/models/chat_completion_content_part_input_audio.rb
+lib/venice_client/models/chat_completion_content_part_video_url.rb
 lib/venice_client/models/chat_completion_request.rb
 lib/venice_client/models/chat_completion_request_messages_inner.rb
 lib/venice_client/models/chat_completion_request_reasoning.rb
@@ -232,6 +242,8 @@ lib/venice_client/models/image_model_pricing_upscale4x.rb
 lib/venice_client/models/image_styles_get200_response.rb
 lib/venice_client/models/image_url.rb
 lib/venice_client/models/image_url_object.rb
+lib/venice_client/models/input_audio.rb
+lib/venice_client/models/input_audio_object.rb
 lib/venice_client/models/json_object.rb
 lib/venice_client/models/json_schema.rb
 lib/venice_client/models/list_characters200_response.rb
@@ -277,6 +289,15 @@ lib/venice_client/models/upscale_image_request_enhance.rb
 lib/venice_client/models/user_message.rb
 lib/venice_client/models/user_message_content.rb
 lib/venice_client/models/video_model_constraints.rb
+lib/venice_client/models/video_url.rb
+lib/venice_client/models/video_url_object.rb
 lib/venice_client/version.rb
+spec/models/assistant_message_reasoning_details_inner_spec.rb
+spec/models/chat_completion_content_part_input_audio_spec.rb
+spec/models/chat_completion_content_part_video_url_spec.rb
+spec/models/input_audio_object_spec.rb
+spec/models/input_audio_spec.rb
+spec/models/video_url_object_spec.rb
+spec/models/video_url_spec.rb
 spec/spec_helper.rb
 venice_client.gemspec

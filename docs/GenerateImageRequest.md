@@ -21,7 +21,7 @@
 | **steps** | **Integer** | Number of inference steps. This model does not support steps - this field is ignored. | [optional][default to 0] |
 | **style_preset** | **String** | An image style to apply to the image. Visit https://docs.venice.ai/api-reference/endpoint/image/styles for more details. | [optional] |
 | **aspect_ratio** | **String** | Aspect ratio (utilized by certain image models including Nano Banana). Examples: \&quot;1:1\&quot;, \&quot;16:9\&quot;. | [optional] |
-| **resolution** | **String** | Resolution (utilized by certain image models including Nano Banana). Examples: \&quot;1024x1024\&quot;, \&quot;512x512\&quot;. | [optional] |
+| **resolution** | **String** | Resolution (utilized by certain image models including Nano Banana). Examples: \&quot;1K\&quot;, \&quot;2K\&quot;, \&quot;4K\&quot;. | [optional] |
 | **enable_web_search** | **Boolean** | Enable web search for the image generation task. This will allow the model to use the latest information from the web to generate the image. Only supported by certain models. If web search is used, additional credits are getting charged. | [optional] |
 | **width** | **Integer** | Width of the generated image. Each model has a specific height and width divisor listed in the widthHeightDivisor constraint in the model list endpoint. | [optional][default to 1024] |
 
@@ -48,7 +48,7 @@ instance = VeniceClient::GenerateImageRequest.new(
   steps: 0,
   style_preset: 3D Model,
   aspect_ratio: 61,
-  resolution: 1024x1024,
+  resolution: 1K,
   enable_web_search: false,
   width: 1024
 )

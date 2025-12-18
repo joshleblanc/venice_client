@@ -13,7 +13,7 @@ All URIs are relative to *https://api.venice.ai/api/v1*
 
 /api/v1/chat/completions
 
-Run text inference based on the supplied parameters. Long running requests should use the streaming API by setting stream=true in your request.
+Run text inference based on the supplied parameters. Supports multimodal inputs including text, images (image_url), audio (input_audio), and video (video_url) for compatible models. Long running requests should use the streaming API by setting stream=true in your request.
 
 ### Examples
 
