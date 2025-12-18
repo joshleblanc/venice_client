@@ -292,12 +292,5 @@ lib/venice_client/models/video_model_constraints.rb
 lib/venice_client/models/video_url.rb
 lib/venice_client/models/video_url_object.rb
 lib/venice_client/version.rb
-spec/models/assistant_message_reasoning_details_inner_spec.rb
-spec/models/chat_completion_content_part_input_audio_spec.rb
-spec/models/chat_completion_content_part_video_url_spec.rb
-spec/models/input_audio_object_spec.rb
-spec/models/input_audio_spec.rb
-spec/models/video_url_object_spec.rb
-spec/models/video_url_spec.rb
 spec/spec_helper.rb
 venice_client.gemspec

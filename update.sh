@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 # Preserve version
 VERSION=$(grep -o "'.*'" lib/venice_client/version.rb | tr -d "'")
 
@@ -20,6 +22,14 @@ s/self.enable_web_search = 'on'/self.enable_web_search = 'off'/g
 s/self.enable_web_search = 'false'/self.enable_web_search = 'off'/g
 s/\["stop", "length"\]/\["stop", "length", "tool_calls"\]/g
 SED_SCRIPT
+
+sed -i "/raise if const.respond_to?(:acceptable_attributes)/c\
+              if const.respond_to?(:acceptable_attributes) && data.is_a?(Hash)\\
+                data = data.select { |k, _v| const.acceptable_attributes.include?(k) }\\
+              end" lib/venice_client/models/create_chat_completion200_response_choices_inner_message.rb
+
+grep -q "data = data.select { |k, _v| const.acceptable_attributes.include?(k) }" \
+  lib/venice_client/models/create_chat_completion200_response_choices_inner_message.rb
 
 # Fix binary content type handling in api_client.rb (video/mp4, audio/*, etc.)
 sed -i "/fail \"Content-Type is not supported/i\\

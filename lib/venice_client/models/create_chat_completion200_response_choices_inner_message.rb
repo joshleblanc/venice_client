@@ -87,7 +87,9 @@ module VeniceClient
               return model if model
             else
               # raise if data contains keys that are not known to the model
-              raise if const.respond_to?(:acceptable_attributes) && !(data.keys - const.acceptable_attributes).empty?
+if const.respond_to?(:acceptable_attributes) && data.is_a?(Hash)
+                data = data.select { |k, _v| const.acceptable_attributes.include?(k) }
+              end
               model = const.build_from_hash(data)
               return model if model
             end
